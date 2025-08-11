@@ -13,11 +13,11 @@ code-copy: true
 code-line-numbers: true
 slide-level: 2
 title-slide-attributes:
-  data-background-image: ../img/CASA_Logo_no_text.png
+  data-background-image: ../core_images/CASA_Logo_no_text.png
   data-background-size: cover
   data-background-position: center
   data-background-opacity: '0.17'
-logo: ../img/CASA_logo.png
+logo: ../core_images/CASA_logo.png
 history: false
 css: slides.css
 ---
@@ -246,7 +246,7 @@ The process of coming up with a question, testing, iterating.
 
 Tests can be one-tailed or two-tailed. 
 
-![](l3_img/one-tailed-vs-two-tailed-test.jpg){.absolute top="170" left="30" width="700"}
+![](L3_images/one-tailed-vs-two-tailed-test.jpg){.absolute top="170" left="30" width="700"}
 
 # Parametric tests 
 
