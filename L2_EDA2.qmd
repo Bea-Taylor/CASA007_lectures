@@ -236,10 +236,24 @@ Even when we think we have really good data, someone has made the choice to coll
 
 ## What to declare 
 
+- Sample size (n) 
+- Mean, median, mode 
+- Standard deviation 
+- Range 
 
-## Same, same, but different 
+## Example 
 
-Anscombe's quartet 
+
+## Same same but different 
+What about when the descriptive statistics don't tell us enough? 
+
+<div style="text-align:center;">
+  <img src="L2_images/anscombes_four.png" alt="Anscombes quartet" style="max-width:70%">
+</div>
+
+::: {.notes}
+These all have mean x = 9, variance x = 11. mean y = 7.5, variance y =4.1
+:::
 
 
 # Normal Distribution
@@ -327,11 +341,12 @@ Many real world datasets are *approximately* normally distributed.
 
 But not all ---  might not have a characteristic size, or not continuous, or not symmetric. 
 
-[Anscombe's quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)
-
 # More generally, what is a probability distribution? 
 
 ## Continous vs. Discrete 
+**Continuous data** 
+
+**Discrete data**
 
 ## Back to the probability density function 
 Why it’s useful – see next week, allows us to evaluate the probability of events, and hence evaluate hypotheses 
@@ -342,8 +357,37 @@ Specific for different probability distributions (/n)
 # Binomial distribution 
 
 ## Coin toss 
-- If I flip a coin 10 times, how often can I expect to get at least 7 heads? 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.incremental}
+- I flip a coin 10 times
+- How often can I expect to get at least 7 heads? 
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+
+<div style="text-align:center;">
+  <img src="L2_images/coin_flip.jpg" alt="Human Brain" style="max-width:70%">
+</div>
+
+:::
+
+::::
+
+
+
+## Discrete outcomes 
+
 - Describes the frequency of successes in a test with 2 outcomes 
+
 
 # Poisson distribution 
 
@@ -395,6 +439,10 @@ If the Poisson measures the probability of x events within a time period, then t
 
 [*The greatest shortcoming of the human race is our inability to understand the exponential function*]{style="color:#49a0c4"} – Albert Bartlett (physicist)
 
+::: {.notes}
+He's a bit dramatic
+:::
+
 ---
 
 ## At it like rabbits 
@@ -426,17 +474,27 @@ If the Poisson measures the probability of x events within a time period, then t
 
 ## Counting rabbits 
 
-
+<div style="text-align:center;">
+  <img src="L2_images/discrete_exponential.gif" alt="Exponential rabbit populations" style="max-width:90%;">
+</div>
 
 ## Estimating rabbit populations
+
 Allows us to answer questions like: "how many rabbits at t=10?"
 
 Answering questions like “Or when will the rabbit population=250?” 
 
 This is easier said than done – the best way is to invert the equation.
 
+## Inverse operations 
+
+The mathematical operation that reverses. 
+
+Subtract is the inverse of adding. 
+Divide is the inverse of multiplying.
 
 ## Logarithms 
+
 - Taking the logarithm is the inverse of taking the exponential. 
 
 ::: {.notes}
@@ -450,7 +508,7 @@ We've covered:
 - Normal distribution
 - Binomial distribution 
 - Poisson distribution 
-- Exponetials 
+- Exponentials 
 - Logarithms 
 
 

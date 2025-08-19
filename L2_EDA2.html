@@ -410,10 +410,35 @@
 </section>
 <section id="what-to-declare" class="slide level2">
 <h2>What to declare</h2>
+<ul>
+<li>Sample size (n)</li>
+<li>Mean, median, mode</li>
+<li>Standard deviation</li>
+<li>Range</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
 </section>
 <section id="same-same-but-different" class="slide level2">
-<h2>Same, same, but different</h2>
-<p>Anscombe’s quartet</p>
+<h2>Same same but different</h2>
+<p>What about when the descriptive statistics don’t tell us enough?</p>
+<div style="text-align:center;">
+<p><img src="L2_images/anscombes_four.png" alt="Anscombes quartet" style="max-width:70%"></p>
+</div>
+<aside class="notes">
+<p>These all have mean x = 9, variance x = 11. mean y = 7.5, variance y =4.1</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="normal-distribution" class="title-slide slide level1 center">
@@ -507,7 +532,6 @@
 <p>Many real world datasets are <em>approximately</em> normally distributed.</p>
 <div class="fragment">
 <p>But not all — might not have a characteristic size, or not continuous, or not symmetric.</p>
-<p><a href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe’s quartet</a></p>
 </div>
 </section></section>
 <section>
@@ -517,6 +541,8 @@
 </section>
 <section id="continous-vs.-discrete" class="slide level2">
 <h2>Continous vs.&nbsp;Discrete</h2>
+<p><strong>Continuous data</strong></p>
+<p><strong>Discrete data</strong></p>
 </section>
 <section id="back-to-the-probability-density-function" class="slide level2">
 <h2>Back to the probability density function</h2>
@@ -533,8 +559,24 @@
 </section>
 <section id="coin-toss" class="slide level2">
 <h2>Coin toss</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
 <ul>
-<li>If I flip a coin 10 times, how often can I expect to get at least 7 heads?</li>
+<li class="fragment">I flip a coin 10 times</li>
+<li class="fragment">How often can I expect to get at least 7 heads?</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<div style="text-align:center;">
+<p><img src="L2_images/coin_flip.jpg" alt="Human Brain" style="max-width:70%"></p>
+</div>
+</div></div>
+</section>
+<section id="discrete-outcomes" class="slide level2">
+<h2>Discrete outcomes</h2>
+<ul>
 <li>Describes the frequency of successes in a test with 2 outcomes</li>
 </ul>
 </section></section>
@@ -588,6 +630,19 @@
 <section class="slide level2">
 
 <p><span style="color:#49a0c4"><em>The greatest shortcoming of the human race is our inability to understand the exponential function</em></span> – Albert Bartlett (physicist)</p>
+<aside class="notes">
+<p>He’s a bit dramatic</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="at-it-like-rabbits" class="slide level2">
 <h2>At it like rabbits</h2>
@@ -610,12 +665,20 @@
 </section>
 <section id="counting-rabbits" class="slide level2">
 <h2>Counting rabbits</h2>
+<div style="text-align:center;">
+<p><img src="L2_images/discrete_exponential.gif" alt="Exponential rabbit populations" style="max-width:90%;"></p>
+</div>
 </section>
 <section id="estimating-rabbit-populations" class="slide level2">
 <h2>Estimating rabbit populations</h2>
 <p>Allows us to answer questions like: “how many rabbits at t=10?”</p>
 <p>Answering questions like “Or when will the rabbit population=250?”</p>
 <p>This is easier said than done – the best way is to invert the equation.</p>
+</section>
+<section id="inverse-operations" class="slide level2">
+<h2>Inverse operations</h2>
+<p>The mathematical operation that reverses.</p>
+<p>Subtract is the inverse of adding. Divide is the inverse of multiplying.</p>
 </section>
 <section id="logarithms" class="slide level2">
 <h2>Logarithms</h2>
@@ -644,7 +707,7 @@
 <li>Normal distribution</li>
 <li>Binomial distribution</li>
 <li>Poisson distribution</li>
-<li>Exponetials</li>
+<li>Exponentials</li>
 <li>Logarithms</li>
 </ul>
 </section>
