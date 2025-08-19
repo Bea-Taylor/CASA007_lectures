@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="L3_hypothesis_testing_files/libs/clipboard/clipboard.min.js"></script>
-<script src="L3_hypothesis_testing_files/libs/quarto-html/tabby.min.js"></script>
-<script src="L3_hypothesis_testing_files/libs/quarto-html/popper.min.js"></script>
-<script src="L3_hypothesis_testing_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="L3_hypothesis_testing_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="L3_hypothesis_testing_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="L3_hypothesis_testing_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="L3_hypothesis_testing_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="L3_hypothesis_testing_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="L3_hypothesis_testing_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+<script src="L2_EDA2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="L2_EDA2_files/libs/quarto-html/tabby.min.js"></script>
+<script src="L2_EDA2_files/libs/quarto-html/popper.min.js"></script>
+<script src="L2_EDA2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="L2_EDA2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="L2_EDA2_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="L2_EDA2_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="L2_EDA2_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="L2_EDA2_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="L2_EDA2_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="Beatrice Taylor">
-  <title>Hypothesis Testing</title>
+  <title>Exploratory Data Analysis 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="L3_hypothesis_testing_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="L3_hypothesis_testing_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="L2_EDA2_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="L2_EDA2_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -32,11 +32,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="L3_hypothesis_testing_files/libs/revealjs/dist/theme/quarto-857e09779095bd51f2e5f66754695bab.css">
-  <link href="L3_hypothesis_testing_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="L3_hypothesis_testing_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="L3_hypothesis_testing_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="L3_hypothesis_testing_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="L2_EDA2_files/libs/revealjs/dist/theme/quarto-857e09779095bd51f2e5f66754695bab.css">
+  <link href="L2_EDA2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="L2_EDA2_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="L2_EDA2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="L2_EDA2_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -135,45 +135,18 @@
 <br>
 <br>
 
-<h1 class="title">Hypothesis Testing</h1>
+<h1 class="title">Exploratory Data Analysis 2</h1>
 
-  <h3 style="opacity:0.8;" class="subtitle">Establishing and evaluating research hypotheses</h3>
 
 <p><span style="margin:0px; font-weight:700;" class="author">Beatrice Taylor</span> - beatrice.taylor@ucl.ac.uk </p>
 
-<p style="opacity: 0.8">12th December 2024</p>
+<p style="opacity: 0.8">8th October 2025</p>
 
-<p style="opacity:0.8;">Any other information</p>
 
 </section>
 <section id="key-information" class="title-slide slide level1 center">
 <h1>Key Information</h1>
-<table class="caption-top" style="width:81%;">
-<colgroup>
-<col style="width: 36%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Module Lead</strong></th>
-<th><strong>Contact</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Prof.&nbsp;Adam Dennett Dr.&nbsp;Huanfa Chen Dr.&nbsp;Beatrice Taylor</td>
-<td>a.dennett[at]ucl.ac.uk huanfa.chen[at]ucl.ac.uk. beatrice.taylor[at]ucl.ac.uk</td>
-</tr>
-<tr class="even">
-<td><strong>PGTAs</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>, ,</td>
-<td>Slack</td>
-</tr>
-</tbody>
-</table>
+
 </section>
 
 <section>
@@ -181,21 +154,20 @@
 <h1>Last week</h1>
 
 </section>
-<section id="overview-of-lecture-2" class="slide level2">
-<h2>Overview of lecture 2</h2>
-<p>Looked at data analysis.</p>
+<section id="overview-of-lecture-1" class="slide level2">
+<h2>Overview of lecture 1</h2>
+<p>Need to fill this in.</p>
 </section></section>
 <section>
 <section id="this-week" class="title-slide slide level1 center">
 <h1>This week</h1>
 
 </section>
-<section id="hypothesising" class="slide level2">
-<h2>Hypothesising</h2>
-<p>Research science is about coming up with hypotheses and evaluating them.</p>
+<section id="first-things-first" class="slide level2">
+<h2>First things first</h2>
+<p>Exploratory data analysis is the first step of any data science project.</p>
 <aside class="notes">
-<p>This lecture thinking about posing and answering reserach questions.</p>
-<p>I have this great idea - considering the data is this idea plausibly true?</p>
+<p>link to scientific process and how we iterate over ideas and concepts</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -208,288 +180,482 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="introducing-statistical-concepts" class="slide level2">
+<h2>Introducing statistical concepts</h2>
+<div>
+<ul>
+<li class="fragment">This lecture is focussed on statistical concepts</li>
+<li class="fragment">Data science is about using ideas from statistics to describe large datasets</li>
+<li class="fragment">Here looking to describe numerical data</li>
+<li class="fragment">Focus on probability distributions</li>
+</ul>
+</div>
+</section>
 <section id="learning-objectives" class="slide level2">
 <h2>Learning Objectives</h2>
-<p>By the end of this lecture you should:</p>
-<ol type="1">
-<li>Establish a hypothesis.</li>
-<li>Define the Type I and Type II errors. - Define the Type I and Type II errors.</li>
-<li>Calculate the p-value.</li>
-</ol>
-</section></section>
-<section>
-<section id="motivations" class="title-slide slide level1 center">
-<h1>Motivations</h1>
-
-</section>
-<section id="how-do-we-know-what-to-believe" class="slide level2">
-<h2>How do we know what to believe?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>What we see in the news</strong></p>
-<ul>
-<li>Is London less safe for cyclists than ten years ago?</li>
-<li>Are x days above 30 degrees in London indicative of a warming climate?</li>
-<li>Is London’s murder rate higher than New York?</li>
-</ul>
-</div></div>
-</section></section>
-<section>
-<section id="how-do-you-come-up-with-a-hypothesis" class="title-slide slide level1 center">
-<h1>How do you come up with a hypothesis?</h1>
-
-</section>
-<section id="what-is-a-hypothesis" class="slide level2">
-<h2>What is a hypothesis?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div>
-<ul>
-<li class="fragment">You have a coin.</li>
-<li class="fragment">You think it’s a fair coin.</li>
-<li class="fragment">You toss it 10 times.</li>
-<li class="fragment">It comes up heads 7 times.</li>
-</ul>
-</div>
-</div></div>
-</section>
-<section id="what-question-can-you-ask" class="slide level2">
-<h2>What question can you ask?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>You have a coin.</li>
-<li>You think it’s a fair coin.</li>
-<li>You toss it 10 times.</li>
-<li>It comes up heads 7 times.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div>
-<ul>
-<li class="fragment">Is it a fair coin? <strong>NO!</strong></li>
-<li class="fragment">What’s the probability that it’s fair? <strong>NO!</strong></li>
-<li class="fragment">If the coin is fair, how likely would it be to see 7 heads out of 10 flips? <strong>ALMOST!</strong></li>
-</ul>
-</div>
-</div></div>
-</section>
-<section id="what-question-should-you-ask" class="slide level2">
-<h2>What question should you ask?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>You have a coin.</li>
-<li>You think it’s a fair coin.</li>
-<li>You toss it 10 times.</li>
-<li>It comes up heads 7 times.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Correct formulation:</strong></p>
-<p>If the coin is fair, how likely would it be to see 7 heads out of 10 flips <em>OR AN EVEN MORE EXTREME RESULT?</em></p>
-</div></div>
-</section></section>
-<section>
-<section id="establishing-a-hypothesis" class="title-slide slide level1 center">
-<h1>Establishing a Hypothesis</h1>
-
-</section>
-<section id="step-1" class="slide level2">
-<h2>Step 1</h2>
-<p><strong>Define the question</strong></p>
-<p>Null hypothesis – the status quo. The alternative hypothesis – need some evidence to verify.</p>
-</section>
-<section id="step-2" class="slide level2">
-<h2>Step 2</h2>
-<p><strong>Set you significance level</strong></p>
-<ul>
-<li>Decide what “too unlikely” means BEFORE YOU DO THE TEST.</li>
-<li>e.g.&nbsp;𝜶 = 0.05 (5% significance)</li>
-<li>This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis.</li>
-</ul>
-</section>
-<section id="step-3" class="slide level2">
-<h2>Step 3</h2>
-<p><strong>Identify the evidence</strong></p>
-<ul>
-<li>Example: data collection – i.e urine sample for pregnancy test</li>
-</ul>
-</section>
-<section id="step-4" class="slide level2">
-<h2>Step 4</h2>
-<p><strong>Calculate the p-value</strong></p>
-<ul>
-<li>The p-value is the probability of seeing the evidence, or something even more extreme, if the null hypothesis is true.</li>
-</ul>
-</section>
-<section id="step-5" class="slide level2">
-<h2>Step 5</h2>
-<p><strong>Compare p-value with hypothesis level</strong></p>
-<ul>
-<li>p-value &gt; 𝜶 - Evidence not that unlikely. Not enough evidence to reject H0.</li>
-<li>p-value ⩽ 𝜶 - Evidence very unlikely. Reject H0 and accept H1.</li>
-</ul>
-</section>
-<section id="the-steps" class="slide level2">
-<h2>The steps</h2>
+<p>By the end of this lecture you should be able to:</p>
 <div>
 <ol type="1">
-<li class="fragment">Define the question</li>
-<li class="fragment">Set you significance level</li>
-<li class="fragment">Identify the evidence</li>
-<li class="fragment">Calculate the p-value</li>
-<li class="fragment">Compare p-value with hypothesis level</li>
+<li class="fragment">Describe the characteristic features of common probability distributions.</li>
+<li class="fragment">Calculate exponentials and logarithms.</li>
+<li class="fragment">Evaluate whether a dataset is representative.</li>
 </ol>
 </div>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>Cyclists in London.</p>
 </section></section>
 <section>
-<section id="types-of-error" class="title-slide slide level1 center">
-<h1>Types of error</h1>
+<section id="motivation" class="title-slide slide level1 center">
+<h1>Motivation</h1>
 
 </section>
-<section id="type-i-error" class="slide level2">
-<h2>Type I error</h2>
-</section>
-<section id="type-ii-error" class="slide level2">
-<h2>Type II error</h2>
-</section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
-</section>
-<section id="matrix-of-errors" class="slide level2">
-<h2>Matrix of errors</h2>
+<section id="what-is-the-likelihood-of-events-occuring" class="slide level2">
+<h2>What is the likelihood of events occuring?</h2>
+<p><strong>Question</strong></p>
+<p>What is the probability of someone at UCL being over 6ft?</p>
+<div class="fragment">
+<p><strong>How can we try to answer this?</strong></p>
+</div>
+<div class="fragment">
+<div class="fragment strike">
+<p>We could try and find someone on campus who is over 6ft.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="fragment highlight-red">
+<p>Better to try and understand the distribution of heights.</p>
+</div>
+<aside class="notes">
+<p>This week thinking about the distribution of data. How do we understand the spread of height data, how to we calculate important features of this data, how can we describe this data using mathematical equations?</p>
+<p>Next week, thinking about formulating and answering the research question.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section></section>
 <section>
-<section id="a-good-hypothesis-or-a-bad-hypothesis" class="title-slide slide level1 center">
-<h1>A good hypothesis or a bad hypothesis?</h1>
-<p>What makes a hypothesis good?</p>
+<section id="random-sampling" class="title-slide slide level1 center">
+<h1>Random Sampling</h1>
+
 </section>
-<section id="understanding-the-literature-and-the-context" class="slide level2">
-<h2>Understanding the literature and the context</h2>
-<p>Hypothesis doesn’t come out of thin air</p>
+<section id="the-dream-vs-reality" class="slide level2">
+<h2>The dream vs reality</h2>
+<p>Ideally, we would like all the relevant data.</p>
+<p>In reality we normally only have some.</p>
+<div style="text-align:center;">
+<p><img src="L2_images/stickfigures.gif" alt="Random Sampling" style="max-width:80%;"></p>
+</div>
+<aside class="notes">
+<p>It would be great if I knew the height of everyone at UCL, but unrealistic to collect – however maybe I could collect all students in this lecture theatre.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="asking-ethical-hypothesis-questions" class="slide level2">
-<h2>Asking ethical hypothesis questions</h2>
+<section id="approximating" class="slide level2">
+<h2>Approximating</h2>
+<p>Hence, we sample a subset of the data.</p>
+<div class="fragment">
+<p>We need to choose our sample carefully. We want what happens in the sample to approximate what happens in the whole population.</p>
+</div>
+<div class="fragment">
+<p><strong>In practise</strong></p>
+<div>
+<p>Need to add something here…</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="is-the-data-representative" class="title-slide slide level1 center">
+<h1>Is the data representative?</h1>
+
+</section>
+<section id="bias" class="slide level2">
+<h2>Bias</h2>
+<p>It’s important to understand if your dataset truly representative or is it susceptible to bias?</p>
+<div style="text-align:center;">
+<p><img src="L2_images/stickfigures_biased.gif" alt="Random Sampling" style="max-width:80%;"></p>
+</div>
+</section>
+<section id="cognitive-bias" class="slide level2">
+<h2>Cognitive bias</h2>
+<p><span style="color:#49a0c4"><em>Systematic patterns in how we think about, and perceive, the world.</em></span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>We all have cognitive biases.</p>
+<p>These can impact our research:</p>
 <ul>
-<li>not making unethical assumptions in choosing the hypothesis.</li>
-<li>Example: correlation between ethnicity and crime</li>
-<li>Use contextual knowledge to consider correlation vs causation</li>
+<li>data collection</li>
+<li>data selection</li>
+<li>data processing</li>
+<li>modelling choices</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<div style="text-align:center;">
+<p><img src="L2_images/human_brain_2.png" alt="Human Brain" style="max-width:60%"></p>
+</div>
+</div></div>
+</section>
+<section id="why-is-this-important" class="slide level2">
+<h2>Why is this important?</h2>
+<p>If we’re not careful we can propagate bias to the research, and hence results.</p>
+<div class="fragment">
+<p>This can lead to incorrect conclusions.</p>
+</div>
+</section>
+<section id="types-of-bias" class="slide level2">
+<h2>Types of bias</h2>
+<ul>
+<li>Dataset bias
+<ul>
+<li>Historical bias</li>
+<li>Selection bias</li>
+</ul></li>
+<li>Research bias
+<ul>
+<li>Cognitive bias</li>
+</ul></li>
 </ul>
 </section>
-<section id="correlation-vs.-causation" class="slide level2">
-<h2>Correlation vs.&nbsp;Causation</h2>
-<p>Lots of things can be correlated - but it doesn’t mean one event caused another.</p>
-</section>
-<section id="aliens-and-taxes" class="slide level2">
-<h2>Aliens and taxes</h2>
-<p>Example from spurious correlations</p>
-</section>
-<section id="correlation-is-not-causation" class="slide level2">
-<h2>Correlation IS NOT causation</h2>
-<p>You might not know whether events are correlated, or causing each other.</p>
-<p>The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions</p>
-</section>
-<section id="the-point-of-the-scientific-method" class="slide level2">
-<h2>The point of the scientific method</h2>
-<p>The process of coming up with a question, testing, iterating.</p>
-</section></section>
-<section>
-<section id="statistical-tests" class="title-slide slide level1 center">
-<h1>Statistical tests</h1>
-
-</section>
-<section id="parametric-vs.-non-parametric-tests" class="slide level2">
-<h2>Parametric vs.&nbsp;Non-parametric tests</h2>
-</section>
-<section id="parametric-tests" class="slide level2">
-<h2>Parametric Tests</h2>
+<section id="historical-bias" class="slide level2">
+<h2>Historical bias</h2>
+<p><span style="color:#49a0c4"><em>Reflects existing, real world, inequalities</em></span></p>
+<p>Examples:</p>
 <ul>
-<li>Evaluate hypothesis for specific parameters</li>
-<li>Typically have assumptions about the distribution - e.g.&nbsp;assumed normal distribution</li>
+<li><a href="https://www.amnesty.org.uk/press-releases/uk-police-forces-supercharging-racism-crime-predicting-tech-new-report">Police profiling</a>
+<ul>
+<li>Automated tools to detect ‘criminals’.</li>
+<li>Trained on datasets which reflect current racist practises.</li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Hungry_judge_effect">Hungry judges</a>
+<ul>
+<li>Tools to help sentencing of ‘criminals’.</li>
+<li>Patterns in the dataset — judges are less lenient before lunch.</li>
+</ul></li>
 </ul>
 </section>
-<section id="non-parametric-tests" class="slide level2">
-<h2>Non-parametric Tests</h2>
+<section id="selection-bias" class="slide level2">
+<h2>Selection bias</h2>
+<p><span style="color:#49a0c4"><em>When the sample chosen doesn’t represent the whole population of interest</em></span></p>
+<p>Examples:</p>
 <ul>
-<li>Evaluate hypotheis for entire population distirbution</li>
-<li>Typcially less assumptions on the ditribution</li>
+<li>Self selection <a href="https://en.wikipedia.org/wiki/Roy_model">Roy Model</a>
+<ul>
+<li>Underlying characteristics of people who self select into certain groups.</li>
+</ul></li>
+<li><a href="https://oecs.mit.edu/pub/spow8trw/release/1">WEIRD people</a>
+<ul>
+<li>Commonly sampled in behavioural sciences.</li>
+<li>Reflects a very small proportion of global population.</li>
+</ul></li>
 </ul>
+<aside class="notes">
+<p>WEIRD = western, educated, industrialised, rich, democratic</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="how-many-tails" class="slide level2">
-<h2>How many tails</h2>
-<p>Tests can be one-tailed or two-tailed.</p>
-<p><a href="L3_images/one-tailed-vs-two-tailed-test.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="L3_images/one-tailed-vs-two-tailed-test.jpg" class="absolute" style="top: 170px; left: 30px; width: 700px; "></a></p>
+<section id="can-data-ever-be-truly-representative" class="slide level2">
+<h2>Can data ever be truly representative?</h2>
+<p>Probably not.</p>
+<aside class="notes">
+<p>Even when we think we have really good data, someone has made the choice to collect this data. Why that data over other data? Does that data reflect their underlying cognitive biases?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="fragment">
+<p><strong>Failing that…</strong> .. we can acknowledge our biases!</p>
+<div style="text-align:center;">
+<img src="https://imgs.xkcd.com/comics/flawed_data.png" alt="XKCD - Flawed Data" style="width:800px">
+<div style="font-size:0.8em; color: #555; margin-top:4px;">
+<pre><code>Image credit: [xkcd](https://xkcd.com/2494/)</code></pre>
+</div>
+</div>
+</div>
 </section></section>
 <section>
-<section id="parametric-tests-1" class="title-slide slide level1 center">
-<h1>Parametric tests</h1>
+<section id="descriptive-statistics" class="title-slide slide level1 center">
+<h1>Descriptive Statistics</h1>
 
 </section>
-<section id="t-test" class="slide level2">
-<h2>T-test</h2>
-<p>Assumes the data is normally distributed.</p>
+<section id="what-to-declare" class="slide level2">
+<h2>What to declare</h2>
 </section>
-<section id="t-test-example" class="slide level2">
-<h2>T-test example</h2>
-<p>What is the probability of someone age 15 being a student on CASA007?</p>
-<p>The probability is very small so we reject.</p>
-</section>
-<section id="regression-t-tests" class="slide level2">
-<h2>Regression T-tests</h2>
-<p>Is the gradient non-zero?</p>
-<p>This indicates a correlation between the two variables.</p>
-<p>…</p>
-<p>This will be covered further in lecture X on linear regression.</p>
-</section>
-<section id="mean-comparison-t-test" class="slide level2">
-<h2>Mean comparison t-test</h2>
-<p>Compares the mean of two distributions.</p>
+<section id="same-same-but-different" class="slide level2">
+<h2>Same, same, but different</h2>
+<p>Anscombe’s quartet</p>
 </section></section>
 <section>
-<section id="non-parametric-tests-1" class="title-slide slide level1 center">
-<h1>Non-parametric tests</h1>
-
+<section id="normal-distribution" class="title-slide slide level1 center">
+<h1>Normal Distribution</h1>
+<p>The most fundamental distribution</p>
 </section>
-<section id="kolmogorov-smirnov-test" class="slide level2">
-<h2>Kolmogorov-Smirnov test</h2>
+<section id="everywhere-you-look" class="slide level2">
+<h2>Everywhere you look</h2>
+<div style="text-align:center;">
+<p><img src="L2_images/normal_distribution.png" alt="Normal distribution" style="max-width:90%"></p>
+</div>
+<aside class="notes">
+<ul>
+<li>Human height</li>
+<li>Happiness</li>
+<li>Petal size</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="youve-seen-it-all-before" class="slide level2">
+<h2>You’ve seen it all before</h2>
 <div>
 <ul>
-<li class="fragment">Compares two probability distributions</li>
-<li class="fragment">Can be used to test whether an observed sameple came from a given distribution</li>
-<li class="fragment">Or to test whether two samples both came from the same distribution</li>
+<li class="fragment">Symmetrical</li>
+<li class="fragment">Single peak</li>
+<li class="fragment">Smooth tails on both sides</li>
 </ul>
 </div>
 </section>
-<section id="kernel-density-estimate" class="slide level2">
-<h2>Kernel density estimate</h2>
+<section id="naturally-occurring" class="slide level2">
+<h2>Naturally occurring</h2>
+<div style="text-align:center;">
+<p><img src="L2_images/height_histogram.png" alt="Normal distribution" style="max-width:90%"></p>
+</div>
+</section>
+<section id="naturally-occurring-1" class="slide level2">
+<h2>Naturally occurring</h2>
+<div style="text-align:center;">
+<p><img src="L2_images/height_histogram_pdf.png" alt="Normal distribution" style="max-width:90%"></p>
+</div>
+</section>
+<section id="uniquely-described-by-two-variables" class="slide level2">
+<h2>Uniquely described by two variables…</h2>
+<div style="text-align:center;">
+<p><img src="L2_images/normal_distribution_annotated.png" alt="Normal distribution" style="max-width:90%"></p>
+</div>
+</section>
+<section id="and-a-probability-distribution-function" class="slide level2">
+<h2>…and a probability distribution function</h2>
+<div style="text-align:center;">
+<p><img src="L2_images/normal_distribution_pdf.png" alt="Normal distribution with annotated probability density function" style="max-width:90%"></p>
+</div>
+<p><span style="color:#49a0c4"><em>The probability density function (PDF) describes the likelihood of different outcomes for a random variable</em></span></p>
+<!-- The PDF of the normal distribution is: 
+
+\begin{align}
+\frac{1}{\sqrt{2 \pi \sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{align}
+``` -->
+</section>
+<section id="key-features" class="slide level2">
+<h2>Key features</h2>
 <div>
 <ul>
-<li class="fragment">Used to generate a smooth PDF for a random variable dataset.</li>
-<li class="fragment">Think of it as getting a smooth function to describe a histogram of data.</li>
-<li class="fragment">There are no assumptions about the prior distribution</li>
+<li class="fragment">Characteristic size (all data points close to the mean): symmetric and single peak</li>
+<li class="fragment">Data is equally likely to be larger or smaller than average (symmetric): Smooth tails on both sides</li>
+<li class="fragment">Data is continuous (it is something you measure not something you count)</li>
 </ul>
 </div>
+</section>
+<section id="sampling-distributions" class="slide level2">
+<h2>Sampling distributions</h2>
+<p>Note importance of sampling distributions.</p>
+<p>In the case of the normal distribution: Std represented by σ vs std represented by σ/√n</p>
+</section>
+<section id="example-distance-to-school" class="slide level2">
+<h2>Example: distance to school</h2>
+</section>
+<section id="not-everything-is-normal" class="slide level2">
+<h2>Not everything is normal</h2>
+<p>Many real world datasets are <em>approximately</em> normally distributed.</p>
+<div class="fragment">
+<p>But not all — might not have a characteristic size, or not continuous, or not symmetric.</p>
+<p><a href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe’s quartet</a></p>
+</div>
+</section></section>
+<section>
+<section id="more-generally-what-is-a-probability-distribution" class="title-slide slide level1 center">
+<h1>More generally, what is a probability distribution?</h1>
+
+</section>
+<section id="continous-vs.-discrete" class="slide level2">
+<h2>Continous vs.&nbsp;Discrete</h2>
+</section>
+<section id="back-to-the-probability-density-function" class="slide level2">
+<h2>Back to the probability density function</h2>
+<p>Why it’s useful – see next week, allows us to evaluate the probability of events, and hence evaluate hypotheses</p>
+</section>
+<section id="sampling-distributions-1" class="slide level2">
+<h2>Sampling distributions</h2>
+<p>Specific for different probability distributions (/n)</p>
+</section></section>
+<section>
+<section id="binomial-distribution" class="title-slide slide level1 center">
+<h1>Binomial distribution</h1>
+
+</section>
+<section id="coin-toss" class="slide level2">
+<h2>Coin toss</h2>
+<ul>
+<li>If I flip a coin 10 times, how often can I expect to get at least 7 heads?</li>
+<li>Describes the frequency of successes in a test with 2 outcomes</li>
+</ul>
+</section></section>
+<section>
+<section id="poisson-distribution" class="title-slide slide level1 center">
+<h1>Poisson distribution</h1>
+
+</section>
+<section id="death-by-horse-kicks" class="slide level2">
+<h2>Death by horse kicks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment">It’s 1894.</li>
+<li class="fragment">You’re the statistician Ladislaus Bortkiewicz.</li>
+<li class="fragment">And you’re wondering,</li>
+<li class="fragment">How many soldiers in the Prussian army have been killed by horse kicks?</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p><a href="L2_images/horse_kicks.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="L2_images/horse_kicks.jpeg"></a></p>
+</div></div>
+</section>
+<section id="measuring-rare-events" class="slide level2">
+<h2>Measuring rare events</h2>
+<div>
+<ul>
+<li class="fragment">Imagine a situation where certain rare events (like arrival of mail) can occur in an <strong>independent</strong> fashion.</li>
+<li class="fragment">The Poisson distribution estimates how many such events are expected within a time interval</li>
+<li class="fragment">Fixed interval (e.g.&nbsp;one minute)</li>
+<li class="fragment">Fixed rate of events (λ) (e.g.&nbsp;4 cars per minute, λ = 4)</li>
+<li class="fragment">Events occur independently.</li>
+<li class="fragment">Poisson Distribution gives the probability of k events.</li>
+</ul>
+</div>
+</section>
+<section id="probability-density-function" class="slide level2">
+<h2>Probability density function</h2>
+</section></section>
+<section>
+<section id="exponentials-and-logarithms" class="title-slide slide level1 center">
+<h1>Exponentials and Logarithms</h1>
+
+</section>
+<section id="exponentials" class="slide level2">
+<h2>Exponentials</h2>
+<p>If the Poisson measures the probability of x events within a time period, then the Exponential measures how long we are likely to wait between events.</p>
+</section>
+<section class="slide level2">
+
+<p><span style="color:#49a0c4"><em>The greatest shortcoming of the human race is our inability to understand the exponential function</em></span> – Albert Bartlett (physicist)</p>
+</section>
+<section id="at-it-like-rabbits" class="slide level2">
+<h2>At it like rabbits</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment">Each Sunday you go for a walk in your local park.</li>
+<li class="fragment">At first you notice two rabbits.</li>
+<li class="fragment">The next time there’s four.</li>
+<li class="fragment">Then eight.</li>
+<li class="fragment">And you’re wondering,</li>
+<li class="fragment">How many rabbits will there be in a year?</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p><a href="L2_images/rabbits.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="L2_images/rabbits.jpeg"></a></p>
+</div></div>
+</section>
+<section id="counting-rabbits" class="slide level2">
+<h2>Counting rabbits</h2>
+</section>
+<section id="estimating-rabbit-populations" class="slide level2">
+<h2>Estimating rabbit populations</h2>
+<p>Allows us to answer questions like: “how many rabbits at t=10?”</p>
+<p>Answering questions like “Or when will the rabbit population=250?”</p>
+<p>This is easier said than done – the best way is to invert the equation.</p>
+</section>
+<section id="logarithms" class="slide level2">
+<h2>Logarithms</h2>
+<ul>
+<li>Taking the logarithm is the inverse of taking the exponential.</li>
+</ul>
+<aside class="notes">
+<p>Multiply and divide are inverse operations of one another (they reverse the process).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section id="overview" class="title-slide slide level1 center">
 <h1>Overview</h1>
 <p>We’ve covered:</p>
 <ul>
-<li>What makes a good hypothesis</li>
-<li>How to formally state a hypothesis</li>
-<li>Types of statistical tests</li>
+<li>Representative data</li>
+<li>Normal distribution</li>
+<li>Binomial distribution</li>
+<li>Poisson distribution</li>
+<li>Exponetials</li>
+<li>Logarithms</li>
 </ul>
 </section>
 
 <section id="practical" class="title-slide slide level1 center">
 <h1>Practical</h1>
-<p>Practical will focus on establishing a evaluation a hypothesis.</p>
-<ul>
-<li>Have questions prepared!</li>
-</ul>
+<p>Practical will focus on plotting and generating sumamry statistics for data following a range of probability distributions.</p>
+<div class="fragment">
+<p>Have questions prepared!</p>
 
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -500,19 +666,19 @@
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="L3_hypothesis_testing_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="L2_EDA2_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

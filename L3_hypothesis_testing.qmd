@@ -1,42 +1,30 @@
 ---
-format:
-  revealjs:
-    # theme: moon
-   theme: [serif, slides.scss]
-#    multiplex: true 
-#    embed-resources: true
-author: "Beatrice Taylor"
 title: "Hypothesis Testing"
-footer: "Hypothesis Testing • Beatrice Taylor"
-highlight-style: github
-code-copy: true
-code-line-numbers: true
-slide-level: 2
+subtitle: "Establishing and evaluating research hypotheses"
+author: 
+  - name: "Beatrice Taylor"
+email: "beatrice.taylor@ucl.ac.uk"
+date-as-string: "12th December 2024"
+from: markdown+emoji
+format:
+  revealjs: 
+    logo: "images/CASA_logo.svg"
+    template-partials: 
+      - title-slide.html
+    transition: none
+    slide-number: false
+    preview-links: auto
+    theme: casa-slides.scss
+    footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
+filters:
+ - code-visibility
+lightbox: auto
 title-slide-attributes:
-  data-background-image: ../core_images/CASA_Logo_no_text.png
-  data-background-size: cover
-  data-background-position: center
-  data-background-opacity: '0.17'
-logo: ../core_images/CASA_logo.png
-history: false
-css: slides.css
+    data-background-image: "images/title-slide.png"
+    data-background-size: stretch
+    data-background-opacity: "0.08"
+    data-background-color: "#4e3c56"
 ---
-
-# Key Information 
-
-+:------------------------+:------------------------------+
-| **Module Lead**         |  **Contact**                  |
-+=========================+===============================+
-| Prof. Adam Dennett      |  a.dennett[at]ucl.ac.uk       |
-| Dr. Huanfa Chen         |  huanfa.chen[at]ucl.ac.uk.    |
-| Dr. Beatrice Taylor     |  beatrice.taylor[at]ucl.ac.uk |
-+-------------------------+-------------------------------+
-| **PGTAs**               |                               |
-+-------------------------+-------------------------------+
-|  ,                      |  Slack                        |
-|  ,                      |                               |
-|                         |                               |
-+-------------------------+-------------------------------+
 
 # Last week
 
@@ -198,12 +186,16 @@ Cyclists in London.
 # Types of error 
 
 ## Type I error
+The null hypothesis is true, but you get a false negative leading to you rejecting the null hypothesis. 
 
 ## Type II error
+The null hypothesis is false, but you get a false posiitve result, leading you to accepting the null hypothesis. 
 
 ## Example 
 
 ## Matrix of errors 
+
+![](L3_images/error_matrix.jpeg)
 
 # A good hypothesis or a bad hypothesis? 
 What makes a hypothesis good? 
@@ -219,8 +211,11 @@ Hypothesis doesn’t come out of thin air
 ## Correlation vs. Causation 
 Lots of things can be correlated - but it doesn't mean one event caused another. 
 
-## Aliens and taxes 
-Example from spurious correlations 
+## Aliens and librarians
+
+![](L3_images/spurious_hawaii_ufo.png)
+
+- [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/19598_google-searches-for-report-ufo-sighting_correlates-with_the-number-of-librarians-in-hawaii)
 
 ## Correlation IS NOT causation 
 You might not know whether events are correlated, or causing each other. 

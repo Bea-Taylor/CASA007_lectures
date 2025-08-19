@@ -1,0 +1,217 @@
+---
+title: "Linear Algebra"
+author: 
+  - name: "Beatrice Taylor"
+email: "beatrice.taylor@ucl.ac.uk"
+date-as-string: "12th December 2024"
+from: markdown+emoji
+format:
+  revealjs: 
+    logo: "images/CASA_logo.svg"
+    template-partials: 
+      - title-slide.html
+    transition: none
+    slide-number: false
+    preview-links: auto
+    theme: casa-slides.scss
+    footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
+filters:
+ - code-visibility
+lightbox: auto
+title-slide-attributes:
+    data-background-image: "images/title-slide.png"
+    data-background-size: stretch
+    data-background-opacity: "0.08"
+    data-background-color: "#4e3c56"
+---
+
+# Last week
+
+## Overview of lecture 3
+
+Looked at hypothesis testing. 
+
+# This week 
+
+## Back to the maths
+
+Maths underpins quantitative methods
+
+- Quantitative methods - which includes data analysis and machine learning 
+- focused on algorithms and methodologies 
+- **AND** practical examples of how these can be applied 
+
+## Key concepts 
+
+Built on maths – this lecture cover some of the key concepts – facilitate deeper understanding of the methodologies 
+
+## It doesn't bite 
+
+Maths can seem scary – but goal is to have a better understanding of key ideas, 
+
+::: {.notes}
+Not expecting students to be experts!
+:::
+
+## Learning Objectives
+By the end of this lecture you should:
+
+1. Establish a hypothesis.
+2. Define the Type I and Type II errors. -	Define the Type I and Type II errors. 
+3. Calculate the p-value.
+
+# Motivation 
+
+## What does it mean?
+
+## But what does it mean???
+
+# Basics 
+
+## Mathematical notation 
+Going to be using some mathematical notation (as this is what’s used in papers!)
+
+Equations like this: 
+Example of equation from GIS paper 
+
+## Cheat sheet 
+Cheat sheet – link to cheat sheet for mathematical notation 
+
+## Mathematical models 
+
+- Mathematical models help us to understand the data
+- In a regression setting the model describes a function that maps input to real-valued outputs 
+- Thinking back to hypotheses from last week. We can use mathematical models to validate our hypotheses/research questions 
+- E.g. How does the number of bedrooms affect house price? 
+- Or the relationship between time spent studying to grade 
+
+## Machine learning 
+
+- A specific type of mathematical model 
+- A model which improves after data is taken into account. 
+- The learning part is about automatically finding patterns 
+
+::: {.notes}
+In later weeks of the course we will look at machine learning concepts. 
+:::
+
+# Functions 
+
+## What is a function?
+It is a mathematical opertaion which maps an input value to an output value. 
+
+## Mathematical description of a function 
+
+- f(x)=y
+- Maps values from a domain () to a range (). 
+- In the applied sciences the domain and range typically R,Z,N
+- Natural numbers 0,1,2,3,4,5,6…
+- Integers … -4, -3, -2, -1, 0, 1, 2, 3, 4, … 
+- Real numbers 
+
+## Data represented algebraically 
+
+- This is the data represented algebraically. 
+- Algebra – expressing a generalised, or abstract, form
+- Typically a vector of numbers X^n
+
+## Examples of functions 
+Probability density function 
+
+# Linear equations 
+
+## A linear combination of variables 
+A specific combination of variables 
+
+## Linear equation(s)
+
+- A system of multiple linear functions 
+- Can be represented by matrices 
+- Systems of linear equatiosn can have 0, 1 or many solutions 
+
+## Example 1 
+
+```{=tex}
+\begin{align}
+x+y=10
+\end{align}
+```
+
+. . .
+
+::: {.incremental}
+- What could x and y be? 
+- Could have x=y=5
+- Or x=2.5 and y=7.5
+:::
+
+. . .
+
+There are many solutions!!!
+Many solutions = under-specified
+
+::: {.notes}
+Under-specified but simple to solve!
+:::
+
+## Example 2 
+
+```{=tex}
+\begin{align}
+x+y=10
+\\
+2x+y=15
+\end{align}
+```
+. . .
+
+::: {.incremental}
+- In school might have solved this using substitution. 
+- Rearrange the first equation to get y=10-x
+- Substituting in we get 2x+(10-x)=15
+- x+10=15  > x=5 > y=5
+:::
+
+. . .
+
+There is exactly one solution
+
+::: {.notes}
+Perfectly specified and we can solve it without too much difficulty 
+:::
+
+## Example 3 
+
+```{=tex}
+\begin{align}
+x_1+x_2+x_3+x_4=10
+\\ x_1+4x_2+x_3+x_4=25
+\\ x_1+4x_2+43x_3+x_4=37
+\\ x_1+4x_2+7x_3+59x_4=1073
+\end{align}
+```
+
+. . .
+
+Very hard to solve!
+
+::: {.notes}
+An example (when things get more complicated)
+:::
+
+# Matrices 
+
+# Overview 
+We've covered: 
+
+- Mathematical notation
+- Functions 
+- Sums and Products
+- Matrices 
+- Algebraic representations 
+
+
+# Practical 
+Practical will focus on understanding mathematical equations.  
+
+- Have questions prepared!
