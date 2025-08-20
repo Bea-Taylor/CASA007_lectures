@@ -141,41 +141,10 @@
 
 <p><span style="margin:0px; font-weight:700;" class="author">Beatrice Taylor</span> - beatrice.taylor@ucl.ac.uk </p>
 
-<p style="opacity: 0.8">12th December 2024</p>
+<p style="opacity: 0.8">15th October 2025</p>
 
-<p style="opacity:0.8;">Any other information</p>
 
 </section>
-<section id="key-information" class="title-slide slide level1 center">
-<h1>Key Information</h1>
-<table class="caption-top" style="width:81%;">
-<colgroup>
-<col style="width: 36%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Module Lead</strong></th>
-<th><strong>Contact</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Prof.&nbsp;Adam Dennett Dr.&nbsp;Huanfa Chen Dr.&nbsp;Beatrice Taylor</td>
-<td>a.dennett[at]ucl.ac.uk huanfa.chen[at]ucl.ac.uk. beatrice.taylor[at]ucl.ac.uk</td>
-</tr>
-<tr class="even">
-<td><strong>PGTAs</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>, ,</td>
-<td>Slack</td>
-</tr>
-</tbody>
-</table>
-</section>
-
 <section>
 <section id="last-week" class="title-slide slide level1 center">
 <h1>Last week</h1>
@@ -183,7 +152,38 @@
 </section>
 <section id="overview-of-lecture-2" class="slide level2">
 <h2>Overview of lecture 2</h2>
-<p>Looked at data analysis.</p>
+<p>Continued concepts from data analysis, in particular probability distributions.</p>
+<ul>
+<li>Representative data</li>
+<li>Normal distribution</li>
+<li>Binomial distribution</li>
+<li>Poisson distribution</li>
+<li>Exponentials</li>
+<li>Logarithms</li>
+</ul>
+</section>
+<section id="what-is-the-likelihood-of-events-occuring" class="slide level2">
+<h2>What is the likelihood of events occuring?</h2>
+<p><strong>Question</strong></p>
+<div class="fragment highlight-red">
+<p>What is the probability of someone at UCL being over 6ft?</p>
+</div>
+<p><strong>How can we try to answer this?</strong></p>
+<p>Try to understand the distribution of heights.</p>
+<aside class="notes">
+<p>Last week we asked this question and we thought about the distribution of the data.</p>
+<p>This week we look at how to pose and address the research question.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="this-week" class="title-slide slide level1 center">
@@ -210,12 +210,14 @@
 </section>
 <section id="learning-objectives" class="slide level2">
 <h2>Learning Objectives</h2>
-<p>By the end of this lecture you should:</p>
+<p>By the end of this lecture you should be able to:</p>
+<div>
 <ol type="1">
-<li>Establish a hypothesis.</li>
-<li>Define the Type I and Type II errors. - Define the Type I and Type II errors.</li>
-<li>Calculate the p-value.</li>
+<li class="fragment">Establish a hypothesis for a given research project.</li>
+<li class="fragment">Define the Type I and Type II errors.</li>
+<li class="fragment">Calculate the p-value.</li>
 </ol>
+</div>
 </section></section>
 <section>
 <section id="motivations" class="title-slide slide level1 center">
@@ -224,23 +226,26 @@
 </section>
 <section id="how-do-we-know-what-to-believe" class="slide level2">
 <h2>How do we know what to believe?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>What we see in the news</strong></p>
-<ul>
-<li>Is London less safe for cyclists than ten years ago?</li>
-<li>Are x days above 30 degrees in London indicative of a warming climate?</li>
-<li>Is London’s murder rate higher than New York?</li>
-</ul>
-</div></div>
+<div style="text-align:center;">
+<p><img src="L3_images/lime_bike_leg.png" alt="Screenshot from the Telegraph online of an article about a rise in Lime Bike accidents." style="max-width:70%" class="fragment"></p>
+</div>
+<div style="text-align:center;">
+<p><img src="L3_images/lime_bike_clapham.png" alt="Screenshot from the Guardian of an article about dangerous biking in Clapham." style="max-width:70%; margin-top:-70%;" class="fragment"></p>
+</div>
+<div style="text-align:center;">
+<p><img src="L3_images/lime_bike_shoreditch.png" alt="Screenshot from the Standard about Lime bike accidents in Shoreditch." style="max-width:70%; margin-top:-70%;" class="fragment"></p>
+</div>
+<div class="fragment" style="text-align:center; margin-top:-60%; background:#4e3c56; color:white; padding:1em; border-radius:10px;">
+<p><strong>Is cycling in London less safe since the introduction of Lime bikes?</strong></p>
+</div>
 </section></section>
 <section>
 <section id="how-do-you-come-up-with-a-hypothesis" class="title-slide slide level1 center">
 <h1>How do you come up with a hypothesis?</h1>
 
 </section>
-<section id="what-is-a-hypothesis" class="slide level2">
-<h2>What is a hypothesis?</h2>
+<section id="flip-a-coin" class="slide level2">
+<h2>Flip a coin</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div>
@@ -264,12 +269,14 @@
 <li>It comes up heads 7 times.</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div>
-<ul>
-<li class="fragment">Is it a fair coin? <strong>NO!</strong></li>
-<li class="fragment">What’s the probability that it’s fair? <strong>NO!</strong></li>
-<li class="fragment">If the coin is fair, how likely would it be to see 7 heads out of 10 flips? <strong>ALMOST!</strong></li>
-</ul>
+<div class="fragment strike">
+<p>Is it a fair coin?</p>
+</div>
+<div class="fragment strike">
+<p>What’s the probability that it’s fair?</p>
+</div>
+<div class="fragment strike">
+<p>If the coin is fair, how likely would it be to see 7 heads out of 10 flips?</p>
 </div>
 </div></div>
 </section>
@@ -295,39 +302,85 @@
 </section>
 <section id="step-1" class="slide level2">
 <h2>Step 1</h2>
-<p><strong>Define the question</strong></p>
-<p>Null hypothesis – the status quo. The alternative hypothesis – need some evidence to verify.</p>
+<p><strong>Define the null and alternative hypothesis</strong></p>
+<div class="fragment">
+<p><span style="color:#49a0c4"><strong>H0</strong> - the null hypothesis</span></p>
+<ul>
+<li>this is the “status quo”</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span style="color:#49a0c4"><strong>H1</strong> - the alternative hypothesis</span></p>
+<ul>
+<li>my hypothesis</li>
+<li>needs some evidence to verify</li>
+</ul>
+</div>
 </section>
 <section id="step-2" class="slide level2">
 <h2>Step 2</h2>
-<p><strong>Set you significance level</strong></p>
+<p><strong>Set you significance level 𝜶</strong></p>
+<p><span style="color:#49a0c4"><em>The significance level is the threshold below which you reject the null hypothesis.</em></span></p>
+<div>
 <ul>
-<li>Decide what “too unlikely” means BEFORE YOU DO THE TEST.</li>
-<li>e.g.&nbsp;𝜶 = 0.05 (5% significance)</li>
-<li>This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis.</li>
+<li class="fragment">Decide what “too unlikely” means <strong>before you do the test</strong>.</li>
+<li class="fragment">Common choice is 5% significance
+<ul>
+<li class="fragment">𝜶 = 0.05</li>
+<li class="fragment">This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis.</li>
+</ul></li>
 </ul>
+</div>
 </section>
 <section id="step-3" class="slide level2">
 <h2>Step 3</h2>
 <p><strong>Identify the evidence</strong></p>
+<div>
 <ul>
-<li>Example: data collection – i.e urine sample for pregnancy test</li>
+<li class="fragment">This could mean collecting the data</li>
+<li class="fragment">Or identifying a suitable dataset</li>
 </ul>
+</div>
 </section>
 <section id="step-4" class="slide level2">
 <h2>Step 4</h2>
 <p><strong>Calculate the p-value</strong></p>
+<p><span style="color:#49a0c4"><em>The p-value is the probability of seeing the evidence, or something even more extreme, if the null hypothesis is true.</em></span></p>
+<div>
 <ul>
-<li>The p-value is the probability of seeing the evidence, or something even more extreme, if the null hypothesis is true.</li>
+<li class="fragment">Calculated according to the appropriate statistical test</li>
+<li class="fragment">The choice of test is determined by the research question and the data</li>
 </ul>
+</div>
+<aside class="notes">
+<p>We’ll come back to different types of statistical test later in the lecture</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="step-5" class="slide level2">
 <h2>Step 5</h2>
-<p><strong>Compare p-value with hypothesis level</strong></p>
+<p><strong>Compare p-value with the significance level</strong></p>
+<div>
 <ul>
-<li>p-value &gt; 𝜶 - Evidence not that unlikely. Not enough evidence to reject H0.</li>
-<li>p-value ⩽ 𝜶 - Evidence very unlikely. Reject H0 and accept H1.</li>
+<li class="fragment">p-value &gt; 𝜶 - Evidence not that unlikely.
+<ul>
+<li class="fragment">Not enough evidence to reject H0.</li>
+</ul></li>
+<li class="fragment">p-value ⩽ 𝜶 - Evidence very unlikely.
+<ul>
+<li class="fragment">Reject H0 and accept H1.</li>
+</ul></li>
 </ul>
+</div>
 </section>
 <section id="the-steps" class="slide level2">
 <h2>The steps</h2>
@@ -352,15 +405,22 @@
 </section>
 <section id="type-i-error" class="slide level2">
 <h2>Type I error</h2>
+<p><span style="color:#49a0c4"><em>The true null hypothesis is incorrectly rejected.</em></span></p>
+<p>This is caused by a <strong>false positive</strong>. The null hypothesis is true, but you get a false positive leading to you rejecting the null hypothesis.</p>
 </section>
 <section id="type-ii-error" class="slide level2">
 <h2>Type II error</h2>
+<p><span style="color:#49a0c4"><em>The false null hypothesis is incorrectly accepted.</em></span></p>
+<p>This is caused by a <strong>false negative</strong>. The null hypothesis is false, but you get a false negative result, leading you to accepting the null hypothesis.</p>
 </section>
 <section id="example-1" class="slide level2">
 <h2>Example</h2>
 </section>
 <section id="matrix-of-errors" class="slide level2">
 <h2>Matrix of errors</h2>
+<div style="text-align:center;">
+<p><img src="L3_images/error_matrix.png" alt="Error matrix" style="max-width:70%"></p>
+</div>
 </section></section>
 <section>
 <section id="a-good-hypothesis-or-a-bad-hypothesis" class="title-slide slide level1 center">
@@ -369,23 +429,27 @@
 </section>
 <section id="understanding-the-literature-and-the-context" class="slide level2">
 <h2>Understanding the literature and the context</h2>
-<p>Hypothesis doesn’t come out of thin air</p>
+<p>The hypothesis should not come out of thin air.</p>
 </section>
 <section id="asking-ethical-hypothesis-questions" class="slide level2">
 <h2>Asking ethical hypothesis questions</h2>
-<ul>
-<li>not making unethical assumptions in choosing the hypothesis.</li>
-<li>Example: correlation between ethnicity and crime</li>
-<li>Use contextual knowledge to consider correlation vs causation</li>
-</ul>
+<p>It’s important to not make unethical assumptions in choosing the hypothesis.</p>
+<p>Example: correlation between ethnicity and crime - Use contextual knowledge to consider correlation vs causation</p>
 </section>
 <section id="correlation-vs.-causation" class="slide level2">
 <h2>Correlation vs.&nbsp;Causation</h2>
+<p><span style="color:#49a0c4"><strong>Correlation:</strong> <em>Two variables are linearly related, as one changes so does the other.</em></span></p>
+<p><span style="color:#49a0c4"><strong>Causation:</strong> <em>One variable influences the other variable to occur.</em></span></p>
 <p>Lots of things can be correlated - but it doesn’t mean one event caused another.</p>
 </section>
-<section id="aliens-and-taxes" class="slide level2">
-<h2>Aliens and taxes</h2>
-<p>Example from spurious correlations</p>
+<section id="aliens-and-librarians" class="slide level2">
+<h2>Aliens and librarians</h2>
+<div style="text-align:center;">
+<img src="L3_images/spurious_hawaii_ufo.png" alt="Spurious correlation - aliens and librarians" style="width:800px">
+<div style="font-size:0.8em; color: #555; margin-top:4px;">
+<pre><code>Image credit: [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/19598_google-searches-for-report-ufo-sighting_correlates-with_the-number-of-librarians-in-hawaii)</code></pre>
+</div>
+</div>
 </section>
 <section id="correlation-is-not-causation" class="slide level2">
 <h2>Correlation IS NOT causation</h2>
@@ -486,10 +550,10 @@
 <section id="practical" class="title-slide slide level1 center">
 <h1>Practical</h1>
 <p>Practical will focus on establishing a evaluation a hypothesis.</p>
-<ul>
-<li>Have questions prepared!</li>
-</ul>
+<div class="fragment">
+<p>Have questions prepared!</p>
 
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

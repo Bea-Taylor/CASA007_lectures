@@ -4,7 +4,7 @@ subtitle: "Establishing and evaluating research hypotheses"
 author: 
   - name: "Beatrice Taylor"
 email: "beatrice.taylor@ucl.ac.uk"
-date-as-string: "12th December 2024"
+date-as-string: "15th October 2025"
 from: markdown+emoji
 format:
   revealjs: 
@@ -30,7 +30,32 @@ title-slide-attributes:
 
 ## Overview of lecture 2
 
-Looked at data analysis.
+Continued concepts from data analysis, in particular probability distributions. 
+
+- Representative data 
+- Normal distribution
+- Binomial distribution 
+- Poisson distribution 
+- Exponentials 
+- Logarithms 
+
+## What is the likelihood of events occuring? 
+
+**Question**
+
+::: {.fragment .highlight-red}
+What is the probability of someone at UCL being over 6ft?
+:::
+
+**How can we try to answer this?**
+
+Try to understand the distribution of heights. 
+
+::: {.notes}
+Last week we asked this question and we thought about the distribution of the data. 
+
+This week we look at how to pose and address the research question. 
+:::
 
 # This week 
 
@@ -45,33 +70,44 @@ I have this great idea - considering the data is this idea plausibly true?
 :::
 
 ## Learning Objectives
-By the end of this lecture you should:
+By the end of this lecture you should be able to:
 
-1. Establish a hypothesis.
-2. Define the Type I and Type II errors. -	Define the Type I and Type II errors. 
+::: {.incremental}
+1. Establish a hypothesis for a given research project. 
+2. Define the Type I and Type II errors. 
 3. Calculate the p-value.
+:::
 
 # Motivations
 
 ## How do we know what to believe?
 
-:::: {.columns}
+<div style="text-align:center;">
+  <img src="L3_images/lime_bike_leg.png"
+       alt="Screenshot from the Telegraph online of an article about a rise in Lime Bike accidents."
+       style="max-width:70%" class="fragment">
+</div>
 
-::: {.column width="50%"}
+<div style="text-align:center;">
+  <img src="L3_images/lime_bike_clapham.png"
+       alt="Screenshot from the Guardian of an article about dangerous biking in Clapham."
+       style="max-width:70%; margin-top:-70%;" class="fragment">
+</div>
 
-**What we see in the news**
+<div style="text-align:center;">
+  <img src="L3_images/lime_bike_shoreditch.png"
+       alt="Screenshot from the Standard about Lime bike accidents in Shoreditch."
+       style="max-width:70%; margin-top:-70%;" class="fragment">
+</div>
 
-- Is London less safe for cyclists than ten years ago?
-- Are x days above 30 degrees in London indicative of a warming climate? 
-- Is London’s murder rate higher than New York? 
-
-:::
-
-::::
+<div class="fragment"
+     style="text-align:center; margin-top:-60%; background:#4e3c56; color:white; padding:1em; border-radius:10px;">
+  <strong>Is cycling in London less safe since the introduction of Lime bikes?</strong>
+</div>
 
 # How do you come up with a hypothesis? 
 
-## What is a hypothesis?
+## Flip a coin
 
 :::: {.columns}
 
@@ -104,11 +140,18 @@ By the end of this lecture you should:
 
 ::: {.column width="50%"}
 
-::: {.incremental}
-- Is it a fair coin? **NO!** 
-- What’s the probability that it’s fair? **NO!**
-- If the coin is fair, how likely would it be to see 7 heads out of 10 flips? **ALMOST!**
+::: {.fragment .strike}
+Is it a fair coin? 
 :::
+
+::: {.fragment .strike}
+What’s the probability that it’s fair?
+:::
+
+::: {.fragment .strike}
+If the coin is fair, how likely would it be to see 7 heads out of 10 flips?
+:::
+
 
 :::
 
@@ -143,35 +186,67 @@ If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR A
 # Establishing a Hypothesis 
 
 ## Step 1
-**Define the question**
+**Define the null and alternative hypothesis**
 
-Null hypothesis – the status quo. 
-The alternative hypothesis – need some evidence to verify. 
+. . .
+
+[**H0** - the null hypothesis]{style="color:#49a0c4"} 
+
+- this is the "status quo"
+
+. . .
+
+[**H1** - the alternative hypothesis ]{style="color:#49a0c4"} 
+
+- my hypothesis
+- needs some evidence to verify
 
 ## Step 2
-**Set you significance level**
+**Set you significance level 𝜶**
 
-- Decide what “too unlikely” means BEFORE YOU DO THE TEST.
-- e.g. 𝜶 = 0.05 (5% significance)
-- This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis. 
+[*The significance level is the threshold below which you reject the null hypothesis.*]{style="color:#49a0c4"} 
+
+::: {.incremental}
+- Decide what “too unlikely” means **before you do the test**.
+- Common choice is 5% significance
+  - 𝜶 = 0.05 
+  - This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis. 
+:::
 
 ## Step 3
 **Identify the evidence**
 
-- Example: data collection – i.e urine sample for pregnancy test 
+::: {.incremental}
+- This could mean collecting the data
+- Or identifying a suitable dataset
+:::
 
 ## Step 4
 **Calculate the p-value**
 
-- The p-value is the probability of seeing the evidence, or something even more extreme, if the null hypothesis is true.
+[*The p-value is the probability of seeing the evidence, or something even more extreme, if the null hypothesis is true.*]{style="color:#49a0c4"}
+
+::: {.incremental}
+- Calculated according to the appropriate statistical test
+- The choice of test is determined by the research question and the data
+:::
+
+::: {.notes}
+We'll come back to different types of statistical test later in the lecture
+:::
 
 ## Step 5 
-**Compare p-value with hypothesis level**
+**Compare p-value with the significance level**
 
-- p-value > 𝜶 - Evidence not that unlikely. Not enough evidence to reject H0.
-- p-value ⩽ 𝜶 - Evidence very unlikely. Reject H0 and accept H1.
+::: {.incremental}
+- p-value > 𝜶 - Evidence not that unlikely. 
+  - Not enough evidence to reject H0.
+- p-value ⩽ 𝜶 - Evidence very unlikely. 
+  - Reject H0 and accept H1.
+:::
 
 ## The steps
+
 ::: {.incremental}
 1. Define the question
 2. Set you significance level
@@ -186,36 +261,55 @@ Cyclists in London.
 # Types of error 
 
 ## Type I error
-The null hypothesis is true, but you get a false negative leading to you rejecting the null hypothesis. 
+[*The true null hypothesis is incorrectly rejected.*]{style="color:#49a0c4"} 
+
+This is caused by a **false positive**. The null hypothesis is true, but you get a false positive leading to you rejecting the null hypothesis. 
 
 ## Type II error
-The null hypothesis is false, but you get a false posiitve result, leading you to accepting the null hypothesis. 
+[*The false null hypothesis is incorrectly accepted.*]{style="color:#49a0c4"} 
+
+This is caused by a **false negative**. The null hypothesis is false, but you get a false negative result, leading you to accepting the null hypothesis. 
 
 ## Example 
 
 ## Matrix of errors 
 
-![](L3_images/error_matrix.jpeg)
+<div style="text-align:center;">
+  <img src="L3_images/error_matrix.png" alt="Error matrix" style="max-width:70%">
+</div>
+
 
 # A good hypothesis or a bad hypothesis? 
 What makes a hypothesis good? 
 
 ## Understanding the literature and the context 
-Hypothesis doesn’t come out of thin air
+The hypothesis should not come out of thin air. 
 
 ## Asking ethical hypothesis questions 
-- not making unethical assumptions in choosing the hypothesis. 
-- Example: correlation between ethnicity and crime
+It's important to not make unethical assumptions in choosing the hypothesis. 
+
+Example: correlation between ethnicity and crime
 - Use contextual knowledge to consider correlation vs causation 
 
 ## Correlation vs. Causation 
+[**Correlation:** *Two variables are linearly related, as one changes so does the other.*]{style="color:#49a0c4"}
+
+[**Causation:** *One variable influences the other variable to occur.*]{style="color:#49a0c4"}
+
 Lots of things can be correlated - but it doesn't mean one event caused another. 
 
 ## Aliens and librarians
 
-![](L3_images/spurious_hawaii_ufo.png)
+<div style="text-align:center;">
+  <img 
+    src="L3_images/spurious_hawaii_ufo.png" 
+    alt="Spurious correlation - aliens and librarians" 
+    style="width:800px">
+  <div style="font-size:0.8em; color: #555; margin-top:4px;">
+    Image credit: [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/19598_google-searches-for-report-ufo-sighting_correlates-with_the-number-of-librarians-in-hawaii)
+  </div>
+</div>
 
-- [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/19598_google-searches-for-report-ufo-sighting_correlates-with_the-number-of-librarians-in-hawaii)
 
 ## Correlation IS NOT causation 
 You might not know whether events are correlated, or causing each other. 
@@ -295,4 +389,6 @@ We've covered:
 # Practical 
 Practical will focus on establishing a evaluation a hypothesis. 
 
-- Have questions prepared!
+. . .
+
+Have questions prepared!
