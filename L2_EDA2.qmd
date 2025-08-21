@@ -11,7 +11,7 @@ format:
     template-partials: 
       - title-slide.html
     transition: none
-    slide-number: false
+    slide-number: true
     preview-links: auto
     theme: casa-slides.scss
     footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
@@ -445,7 +445,26 @@ If the Poisson measures the probability of x events within a time period, then t
 He's a bit dramatic
 :::
 
-## At it like rabbits 
+## A game of chess
+
+<div style="text-align:center;">
+  <img src="L2_images/chessboard_rice.gif" alt="Exponential rice" style="max-width:60%;">
+</div>
+
+## and rice 
+
+<div style="text-align:center;">
+  <img src="L2_images/chessboard_numbers.png" alt="More exponential rice" style="max-width:60%;">
+</div>
+
+## 9.22x10^18 
+
+which is more rice than there is on earth... 
+
+## What does this look like on a graph 
+
+
+<!-- ## At it like rabbits 
 
 :::: {.columns}
 
@@ -512,7 +531,7 @@ y = 2^x
 
 :::{.notes}
 Here we have the base, 2, and the exponent x. 
-:::
+::: -->
 
 ## The exponential function
 

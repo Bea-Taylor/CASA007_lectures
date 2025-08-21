@@ -3,7 +3,7 @@ title: "Linear Algebra"
 author: 
   - name: "Beatrice Taylor"
 email: "beatrice.taylor@ucl.ac.uk"
-date-as-string: "12th December 2024"
+date-as-string: "22nd October 2025"
 from: markdown+emoji
 format:
   revealjs: 
@@ -11,7 +11,7 @@ format:
     template-partials: 
       - title-slide.html
     transition: none
-    slide-number: false
+    slide-number: true
     preview-links: auto
     theme: casa-slides.scss
     footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
@@ -29,7 +29,11 @@ title-slide-attributes:
 
 ## Overview of lecture 3
 
-Looked at hypothesis testing. 
+Looked at hypothesis testing:
+
+- What makes a good hypothesis 
+- How to formally state a hypothesis 
+- Types of statistical tests 
 
 # This week 
 
@@ -37,34 +41,71 @@ Looked at hypothesis testing.
 
 Maths underpins quantitative methods
 
-- Quantitative methods - which includes data analysis and machine learning 
+::: {.incremental}
+- Quantitative methods includes data analysis and machine learning 
 - focused on algorithms and methodologies 
 - **AND** practical examples of how these can be applied 
+:::
 
 ## Key concepts 
+:::: {.columns}
 
-Built on maths – this lecture cover some of the key concepts – facilitate deeper understanding of the methodologies 
+::: {.column width="50%"}
+
+<div style="text-align:center;">
+  <img 
+    src="https://imgs.xkcd.com/comics/machine_learning.png" 
+    alt="XKCD - Machine Learning" 
+    style="width:500px">
+  <div style="font-size:0.8em; color: #555; margin-top:4px;">
+    Image credit: [xkcd](https://xkcd.com/1838/)
+  </div>
+</div>
+
+:::
+
+::: {.column width="50%"}
+
+- This lecture covers some of the key concepts. 
+- The goal is to facilitate deeper understanding of the methods.
+
+:::
+
+::::
+
 
 ## It doesn't bite 
 
-Maths can seem scary – but goal is to have a better understanding of key ideas, 
+<div style="text-align:center;">
+  <img src="L4_images/maths_meme.jpg" alt="Woman confused by maths." style="max-width:90%">
+</div>
 
 ::: {.notes}
+Maths can seem scary – but goal is to have a better understanding of key ideas.
+
 Not expecting students to be experts!
 :::
 
 ## Learning Objectives
 By the end of this lecture you should:
 
-1. Establish a hypothesis.
-2. Define the Type I and Type II errors. -	Define the Type I and Type II errors. 
-3. Calculate the p-value.
+1. Define concepts of linear maps, injections, bijections and surjections. 
+2. Compute linear algebra equations using vectors and matrices.  
+3. Describe how linear algebra relates to solving linear regression. 
 
 # Motivation 
 
 ## What does it mean?
 
+::: {.notes}
+This is a linear equation. 
+:::
+
 ## But what does it mean???
+
+::: {.notes}
+This is an equation for a mathematical model. 
+::: 
 
 # Basics 
 
@@ -75,59 +116,149 @@ Equations like this:
 Example of equation from GIS paper 
 
 ## Cheat sheet 
-Cheat sheet – link to cheat sheet for mathematical notation 
+Cheat sheet – link to cheat sheet for mathematical notation. 
+
+[Cheat sheet](https://www.upyesp.org/posts/makrdown-vscode-math-notation/)
 
 ## Mathematical models 
 
+::: {.incremental}
 - Mathematical models help us to understand the data
 - In a regression setting the model describes a function that maps input to real-valued outputs 
-- Thinking back to hypotheses from last week. We can use mathematical models to validate our hypotheses/research questions 
-- E.g. How does the number of bedrooms affect house price? 
-- Or the relationship between time spent studying to grade 
+- We can use mathematical models to validate our hypotheses/research questions 
+  - How does the number of bedrooms affect house price? 
+  - The relationship between time spent studying and students grades? 
+:::
+
+::: {.notes}
+Thinking back to hypotheses from last week - mathematical models help us to evaluate our research question.
+:::
 
 ## Machine learning 
+[*A model which improves after data is taken into account.*]{style="color:#49a0c4"} 
 
 - A specific type of mathematical model 
-- A model which improves after data is taken into account. 
 - The learning part is about automatically finding patterns 
 
 ::: {.notes}
+Lots of different definitions of machine learning - but this us a simple one. 
+
 In later weeks of the course we will look at machine learning concepts. 
 :::
 
 # Functions 
 
 ## What is a function?
-It is a mathematical opertaion which maps an input value to an output value. 
+[*A function is a mathematical operation which maps an input value to an output value.*]{style="color:#49a0c4"} 
 
-## Mathematical description of a function 
+. . .
 
-- f(x)=y
-- Maps values from a domain () to a range (). 
-- In the applied sciences the domain and range typically R,Z,N
-- Natural numbers 0,1,2,3,4,5,6…
-- Integers … -4, -3, -2, -1, 0, 1, 2, 3, 4, … 
-- Real numbers 
+**Mathematical description of a function**
+
+```{=tex}
+\begin{align}
+f(x) = y
+\end{align}
+```
+
+. . .
+
+Maps values from a domain $X$ to a range $Y$.
+
+```{=tex}
+\begin{align}
+f(x) = y \text{ for } x \in X, y \in Y 
+\end{align}
+```
+
+## Domain and range 
+
+In the applied sciences the domain and range are typically $\N$, $\Z$, $\R$
+
+. . .
+
+- $\N$ **Natural numbers** 0,1,2,3,4,5,6…
+- $\Z$ **Integers** … -4, -3, -2, -1, 0, 1, 2, 3, 4, … 
+- $\R$ **Real numbers** 
 
 ## Data represented algebraically 
+[*Algebra is a way of expressing numbers in a generalised or abstract form.*]{style="color:#49a0c4"} 
+
+Example: 
+
+```{=tex}
+\begin{align}
+x \in N 
+\end{align}
+```
+
+. . .
 
 - This is the data represented algebraically. 
-- Algebra – expressing a generalised, or abstract, form
-- Typically a vector of numbers X^n
+- Typically a vector of numbers $X^n$
+
+```{=tex}
+\begin{align}
+X^n = (x_1, x_2, x_3, ... , x_n)
+\end{align}
+```
 
 ## Examples of functions 
-Probability density function 
+Probability density function of normal distribution 
+
+```{=tex}
+\begin{align}
+f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{align}
+```
+
+where $x \in \N$ and $f(x) \in \{ 0 , 1 \}$. 
+
+. . .
+
+The other function we've seen is a linear equation. 
+
+```{=tex}
+\begin{align}
+f(x) = ax + b
+\end{align}
+```
+
+::: {.notes}
+Last lecture we were thinking about PDFs - these are a function. They map the input value, the 'x' to the output range which is a probability between 0 and 1. 
+:::
 
 # Linear equations 
 
-## A linear combination of variables 
-A specific combination of variables 
+## Linear equation
+[*A linear equation is a linear combination of variables.*]{style="color:#49a0c4"}
+
+Examples include:
+```{=tex}
+\begin{align}
+f(x) = ax + b
+\end{align}
+```
+
+. . .
+
+Graphically this is a straight line. 
+
+. . .
+
+[*"linea"* is the latin word for line or string. ]{style="color:#49a0c4"}
+
+Add a plot of a linear line here.  
 
 ## Linear equation(s)
 
+We can generalise to multiple equations. 
+
+::: {.incremental}
 - A system of multiple linear functions 
 - Can be represented by matrices 
 - Systems of linear equatiosn can have 0, 1 or many solutions 
+:::
 
 ## Example 1 
 
@@ -140,14 +271,15 @@ x+y=10
 . . .
 
 ::: {.incremental}
-- What could x and y be? 
-- Could have x=y=5
-- Or x=2.5 and y=7.5
+- What could $x$ and $y$ be? 
+- Could have $x=y=5$
+- Or $x=2.5$ and $y=7.5$
 :::
 
 . . .
 
 There are many solutions!!!
+
 Many solutions = under-specified
 
 ::: {.notes}
@@ -165,16 +297,17 @@ x+y=10
 ```
 . . .
 
+In school might have solved this using substitution. 
+
 ::: {.incremental}
-- In school might have solved this using substitution. 
-- Rearrange the first equation to get y=10-x
-- Substituting in we get 2x+(10-x)=15
-- x+10=15  > x=5 > y=5
+- Rearrange the first equation to get $y=10-x$
+- Substituting in we get $2x+(10-x)=15$
+- $x+10=15$ $\implies$ $x=5$ $\implies$ $y=5$
 :::
 
 . . .
 
-There is exactly one solution
+There is exactly one solution!
 
 ::: {.notes}
 Perfectly specified and we can solve it without too much difficulty 
@@ -201,6 +334,17 @@ An example (when things get more complicated)
 
 # Matrices 
 
+## Generalised matrix form 
+
+## Along the corridor, and down the stairs 
+
+## Matrix addition 
+
+## Matrix multiplication 
+
+# Solving systems of equations 
+
+
 # Overview 
 We've covered: 
 
@@ -212,6 +356,8 @@ We've covered:
 
 
 # Practical 
-Practical will focus on understanding mathematical equations.  
+The practical will focus on understanding mathematical equations.  
+
+. . .
 
 - Have questions prepared!

@@ -12,7 +12,7 @@ format:
     template-partials: 
       - title-slide.html
     transition: none
-    slide-number: false
+    slide-number: true
     preview-links: auto
     theme: casa-slides.scss
     footer: "&copy; CASA &nbsp; | &nbsp; [ucl.ac.uk/bartlett/casa](https://www.ucl.ac.uk/bartlett/casa)"
@@ -202,7 +202,7 @@ If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR A
 - needs some evidence to verify
 
 ## Step 2
-**Set you significance level 𝜶**
+**Set your significance level 𝜶**
 
 [*The significance level is the threshold below which you reject the null hypothesis.*]{style="color:#49a0c4"} 
 
@@ -248,15 +248,13 @@ We'll come back to different types of statistical test later in the lecture
 ## The steps
 
 ::: {.incremental}
-1. Define the question
+1. Define the null and alternative hypothesis
 2. Set you significance level
 3. Identify the evidence
 4. Calculate the p-value
 5. Compare p-value with hypothesis level
 :::
 
-## Example 
-Cyclists in London. 
 
 # Types of error 
 
@@ -319,6 +317,32 @@ The point of the hypothesis test is to test your idea – but use your contextua
 ## The point of the scientific method
 The process of coming up with a question, testing, iterating.
 
+
+# Example: cyclists in London 
+
+## Example - step 1
+**Define the null and alternative hypothesis**
+
+H0: Probability of injury has not changed. 
+
+H1: Probability of injury has changed. 
+
+## Example - step 2
+**Set your significance level**
+
+𝜶 = 0.05 
+
+## Example - step 3
+**Identify the evidence**
+
+Dataset: 
+
+## Example - step 4
+**Calculate the p-value**
+
+Aha!
+
+
 # Statistical tests 
 
 ## Parametric vs. Non-parametric tests
@@ -367,9 +391,11 @@ Compares the mean of two distributions.
 ## Kolmogorov-Smirnov test 
 ::: {.incremental}
 - Compares two probability distributions 
-- Can be used to test whether an observed sameple came from a given distribution 
+- Can be used to test whether an observed sample came from a given distribution 
 - Or to test whether two samples both came from the same distribution
 :::
+
+## Example
 
 ## Kernel density estimate 
 ::: {.incremental}
@@ -377,6 +403,8 @@ Compares the mean of two distributions.
 - Think of it as getting a smooth function to describe a histogram of data. 
 - There are no assumptions about the prior distribution
 :::
+
+## Example 
 
 # Overview 
 We've covered: 
@@ -387,7 +415,7 @@ We've covered:
 
 
 # Practical 
-Practical will focus on establishing a evaluation a hypothesis. 
+The practical will focus on establishing and evaluating a research hypothesis. 
 
 . . .
 
