@@ -445,57 +445,70 @@ If the Poisson measures the probability of x events within a time period, then t
 He's a bit dramatic
 :::
 
-## A game of chess
+## A game of chess...
 
-<div style="text-align:center;">
+<!-- <div style="text-align:center;">
   <img src="L2_images/chessboard_rice.gif" alt="Exponential rice" style="max-width:60%;">
-</div>
-
-## and rice 
-
-<div style="text-align:center;">
-  <img src="L2_images/chessboard_numbers.png" alt="More exponential rice" style="max-width:60%;">
-</div>
-
-## 9.22x10^18 
-
-which is more rice than there is on earth... 
-
-## What does this look like on a graph 
-
-
-<!-- ## At it like rabbits 
+</div> -->
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 
 ::: {.incremental}
-- Each Sunday you go for a walk in your local park. 
-- At first you notice two rabbits.
-- The next time there's four. 
-- Then eight.
-- And you're wondering, 
-- How many rabbits will there be in a year? 
+- You've invented chess. 
+- The emperor asks what you would like as thanks. 
+- You ask for grains of rice.  
 :::
 
 :::
 
 ::: {.column width="50%"}
 
-<br>
-
-![](L2_images/rabbits.jpeg)
+<div style="text-align:center;">
+  <img src="L2_images/Radha_Krishna_chess.jpg" alt="An illustration of Krishna and Radha playing Chaturanga." style="max-width:90%;">
+  <div style="font-size:0.8em; color: #555; margin-top:4px;">
+    Image credit: https://simple.wikipedia.org/wiki/Chaturanga
+  </div>
+</div>
 
 :::
 
 ::::
 
-## Counting rabbits 
+::: {.notes}
+Famous story, of the man who invented chess. 
+Emperor was so grateful, he said what do you want in return 
+The man asked for rice, such that on each square of the chess board, the number of grains of rice doubled. 
+The Emperor thought this was a really small ask for such a great invention. He asked if he didn't want a better gift. 
+But the man insisted that what he wanted was rice. 
+:::
+
+## ...and rice 
+
+:::: {.columns}
+
+::: {.column width="80%"}
 
 <div style="text-align:center;">
-  <img src="L2_images/discrete_exponential.gif" alt="Exponential rabbit populations" style="max-width:90%;">
+  <img src="L2_images/chessboard_numbers.gif" alt="Exponential rice" style="max-width:75%;">
 </div>
+
+:::
+
+::: {.column width="20%"}
+
+::: {.incremental}
+- which is more rice than there is on earth... 
+:::
+
+:::
+
+::::
+
+::: {.notes}
+A bowl of rice is around 4,000 grains. 
+:::
 
 ## Writing the equation
 
@@ -531,7 +544,49 @@ y = 2^x
 
 :::{.notes}
 Here we have the base, 2, and the exponent x. 
-::: -->
+:::
+
+## What does this look like on a graph?
+
+<div style="text-align:center;">
+  <img src="L2_images/discrete_exponential_chess.gif" alt="Exponential grains of rice." style="max-width:90%;">
+</div>
+
+
+<!-- ## At it like rabbits 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.incremental}
+- Each Sunday you go for a walk in your local park. 
+- At first you notice two rabbits.
+- The next time there's four. 
+- Then eight.
+- And you're wondering, 
+- How many rabbits will there be in a year? 
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](L2_images/rabbits.jpeg)
+
+:::
+
+::::
+
+## Counting rabbits 
+
+<div style="text-align:center;">
+  <img src="L2_images/discrete_exponential.gif" alt="Exponential rabbit populations" style="max-width:90%;">
+</div>
+
+ -->
 
 ## The exponential function
 
@@ -555,11 +610,11 @@ Its a mathematical constant simialr to pi - it's just a fixed numebr which we ha
 Like pi comes from geometry (circles etc), e comes from the limit of the equation of compound interest
 :::
 
-## Estimating rabbit populations
+## When I can feed my town?
 
-Allows us to answer questions like: "how many rabbits at t=10?"
+Allows us to answer questions like: "how many grain of rice at t=10?"
 
-Answering questions like “Or when will the rabbit population=250?” 
+Answering questions like “Or when will I have enough rice to feed my entire town?” 
 
 This is easier said than done – the best way is to invert the equation.
 
@@ -618,6 +673,9 @@ Read the equation as log of 8 base 2 equals 3.
 :::
 
 ## Natural logarithm 
+
+
+## Log rules 
 
 
 

@@ -182,7 +182,6 @@ If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR A
 ::::
 
 
-
 # Establishing a Hypothesis 
 
 ## Step 1
@@ -198,7 +197,7 @@ If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR A
 
 [**H1** - the alternative hypothesis ]{style="color:#49a0c4"} 
 
-- my hypothesis
+- your hypothesis
 - needs some evidence to verify
 
 ## Step 2
@@ -236,12 +235,14 @@ We'll come back to different types of statistical test later in the lecture
 :::
 
 ## Step 5 
-**Compare p-value with the significance level**
+**Compare p-value with significance level**
 
 ::: {.incremental}
-- p-value > 𝜶 - Evidence not that unlikely. 
+- p-value > 𝜶 
+  - Evidence not that unlikely. 
   - Not enough evidence to reject H0.
-- p-value ⩽ 𝜶 - Evidence very unlikely. 
+- p-value ⩽ 𝜶 
+  - Evidence very unlikely. 
   - Reject H0 and accept H1.
 :::
 
@@ -255,13 +256,13 @@ We'll come back to different types of statistical test later in the lecture
 5. Compare p-value with hypothesis level
 :::
 
-
 # Types of error 
 
 ## Type I error
 [*The true null hypothesis is incorrectly rejected.*]{style="color:#49a0c4"} 
 
 This is caused by a **false positive**. The null hypothesis is true, but you get a false positive leading to you rejecting the null hypothesis. 
+
 
 ## Type II error
 [*The false null hypothesis is incorrectly accepted.*]{style="color:#49a0c4"} 
@@ -283,16 +284,35 @@ What makes a hypothesis good?
 ## Understanding the literature and the context 
 The hypothesis should not come out of thin air. 
 
+. . .
+
+What research have other people done? 
+
+. . .
+
+What is the cultural context? 
+
 ## Asking ethical hypothesis questions 
 It's important to not make unethical assumptions in choosing the hypothesis. 
 
-Example: correlation between ethnicity and crime
-- Use contextual knowledge to consider correlation vs causation 
+. . .
+
+**Example** 
+
+[Police profiling](https://www.amnesty.org.uk/press-releases/uk-police-forces-supercharging-racism-crime-predicting-tech-new-report) - assumes a correlation between ethnicity and crime
+
+- Use contextual knowledge
+- Is this causation? 
+- Or correlation linked to other factors?
 
 ## Correlation vs. Causation 
 [**Correlation:** *Two variables are linearly related, as one changes so does the other.*]{style="color:#49a0c4"}
 
+. . .
+
 [**Causation:** *One variable influences the other variable to occur.*]{style="color:#49a0c4"}
+
+. . .
 
 Lots of things can be correlated - but it doesn't mean one event caused another. 
 
@@ -315,7 +335,34 @@ You might not know whether events are correlated, or causing each other.
 The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions
 
 ## The point of the scientific method
-The process of coming up with a question, testing, iterating.
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="text-align:center;">
+  <img src="L3_images/scientific_method.png" alt="The scientific method" style="max-width:100%">
+</div>
+
+
+:::
+
+::: {.column width="40%"}
+
+It's a process
+
+::: {.incremental}
+- question 
+- test 
+- evaluate 
+- ***REPEAT!***
+:::
+
+:::
+
+::::
+
+
 
 
 # Example: cyclists in London 

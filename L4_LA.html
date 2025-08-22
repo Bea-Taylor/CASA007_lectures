@@ -225,6 +225,15 @@
 </section>
 <section id="what-does-it-mean" class="slide level2">
 <h2>What does it mean?</h2>
+<p>The goal is to understand equations like this:</p>
+<span class="math display">\[\begin{align}
+y = \sum_{i=1}^n \beta_i x_i
+\end{align}\]</span>
+<div class="fragment">
+<p>or like: (need another example here)</p>
+<span class="math display">\[\begin{align}
+y = \sum_{i=1}^n \beta_i x_i
+\end{align}\]</span>
 <aside class="notes">
 <p>This is a linear equation.</p>
 <style type="text/css">
@@ -238,11 +247,19 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section>
 <section id="but-what-does-it-mean" class="slide level2">
 <h2>But what does it mean???</h2>
+<p>Equations are often used in the methods sections of papers to describe the model.</p>
+<div style="text-align:center;">
+<img src="L4_images/GWR_equation.png" alt="Geographically weighted regression equation." style="width:900px">
+<div style="font-size:0.8em; color: #555; margin-top:4px;">
+<pre><code>Taken from: Chiou, Jou, &amp; Yang, (2015). Factors affecting public transportation usage rate: Geographically weighted regression. Transportation Research Part A: Policy and Practice.</code></pre>
+</div>
+</div>
 <aside class="notes">
-<p>This is an equation for a mathematical model.</p>
+<p>This is an equation for a geographically weighted regression model.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -262,13 +279,33 @@
 </section>
 <section id="mathematical-notation" class="slide level2">
 <h2>Mathematical notation</h2>
-<p>Going to be using some mathematical notation (as this is what’s used in papers!)</p>
-<p>Equations like this: Example of equation from GIS paper</p>
+<p>Going to be using some mathematical notation</p>
+<ul>
+<li>as this is what’s used in papers!</li>
+</ul>
+<div class="fragment">
+<p>Formal way of writing maths.</p>
+<aside class="notes">
+<p>Provides a universal way of writing and understanding maths.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="cheat-sheet" class="slide level2">
 <h2>Cheat sheet</h2>
-<p>Cheat sheet – link to cheat sheet for mathematical notation.</p>
-<p><a href="https://www.upyesp.org/posts/makrdown-vscode-math-notation/">Cheat sheet</a></p>
+<p>Mathematical notation cheat sheet: https://www.upyesp.org/posts/makrdown-vscode-math-notation/</p>
+<div style="text-align:center;">
+<p><img src="L4_images/cheat_sheet_QR_code.png" alt="QR code for maths cheat sheet." style="max-width:35%"></p>
+</div>
 </section>
 <section id="mathematical-models" class="slide level2">
 <h2>Mathematical models</h2>
@@ -342,13 +379,30 @@ f(x) = y \text{ for } x \in X, y \in Y
 </section>
 <section id="domain-and-range" class="slide level2">
 <h2>Domain and range</h2>
-<p>In the applied sciences the domain and range are typically <span class="math inline">\(\N\)</span>, <span class="math inline">\(\Z\)</span>, <span class="math inline">\(\R\)</span></p>
+<p><span style="color:#49a0c4"><em><strong>Domain</strong> - the numbers mapped from</em></span></p>
+<p><span style="color:#49a0c4"><em><strong>Range</strong>: the numbers mapped to</em></span></p>
 <div class="fragment">
+<p>In the applied sciences the domain and range are typically <span class="math inline">\(\mathbb N\)</span>, <span class="math inline">\(\mathbb Z\)</span>, <span class="math inline">\(\mathbb R\)</span></p>
+</div>
+<div class="fragment">
+<div>
 <ul>
-<li><span class="math inline">\(\N\)</span> <strong>Natural numbers</strong> 0,1,2,3,4,5,6…</li>
-<li><span class="math inline">\(\Z\)</span> <strong>Integers</strong> … -4, -3, -2, -1, 0, 1, 2, 3, 4, …</li>
-<li><span class="math inline">\(\R\)</span> <strong>Real numbers</strong></li>
+<li class="fragment"><span class="math inline">\(\mathbb N\)</span>
+<ul>
+<li class="fragment"><strong>Natural numbers</strong></li>
+<li class="fragment">0,1,2,3,4,5,6…</li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\mathbb Z\)</span>
+<ul>
+<li class="fragment"><strong>Integers</strong></li>
+<li class="fragment">… -4, -3, -2, -1, 0, 1, 2, 3, 4, …</li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\mathbb R\)</span>
+<ul>
+<li class="fragment"><strong>Real numbers</strong></li>
+</ul></li>
 </ul>
+</div>
 </div>
 </section>
 <section id="data-represented-algebraically" class="slide level2">
@@ -356,7 +410,7 @@ f(x) = y \text{ for } x \in X, y \in Y
 <p><span style="color:#49a0c4"><em>Algebra is a way of expressing numbers in a generalised or abstract form.</em></span></p>
 <p>Example:</p>
 <span class="math display">\[\begin{align}
-x \in N
+x \in \mathbb N
 \end{align}\]</span>
 <div class="fragment">
 <ul>
@@ -368,18 +422,18 @@ X^n = (x_1, x_2, x_3, ... , x_n)
 \end{align}\]</span>
 </div>
 </section>
-<section id="examples-of-functions" class="slide level2">
-<h2>Examples of functions</h2>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
 <p>Probability density function of normal distribution</p>
 <span class="math display">\[\begin{align}
 f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 \end{align}\]</span>
-<p>where <span class="math inline">\(x \in \N\)</span> and <span class="math inline">\(f(x) \in \{ 0 , 1 \}\)</span>.</p>
-<div class="fragment">
-<p>The other function we’ve seen is a linear equation.</p>
-<span class="math display">\[\begin{align}
-f(x) = ax + b
-\end{align}\]</span>
+<p>where <span class="math inline">\(x \in \mathbb N\)</span> and <span class="math inline">\(f(x) \in [ 0 , 1 ]\)</span>.</p>
+<p><br> <br></p>
+<div style="background-color:#2e6260; color:white; padding:8px; border-radius:5px; margin-top:10px;">
+<p><em>Note</em></p>
+<span class="math inline">\([0, 1]\)</span> is the set of real numbers between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>, inclusive of <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.
+</div>
 <aside class="notes">
 <p>Last lecture we were thinking about PDFs - these are a function. They map the input value, the ‘x’ to the output range which is a probability between 0 and 1.</p>
 <style type="text/css">
@@ -393,7 +447,13 @@ f(x) = ax + b
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+<p>The other function we’ve seen is a linear equation.</p>
+<span class="math display">\[\begin{align}
+f(x) = ax + b
+\end{align}\]</span>
 </section></section>
 <section>
 <section id="linear-equations" class="title-slide slide level1 center">
@@ -411,22 +471,27 @@ f(x) = ax + b
 <p>Graphically this is a straight line.</p>
 </div>
 <div class="fragment">
-<p><span style="color:#49a0c4"><em>“linea”</em> is the latin word for line or string.</span></p>
+<div style="background-color:#2e6260; color:white; padding:8px; border-radius:5px; margin-top:10px;">
+<em>“linea”</em> is the latin word for line or string.
+</div>
 <p>Add a plot of a linear line here.</p>
 </div>
 </section>
 <section id="linear-equations-1" class="slide level2">
 <h2>Linear equation(s)</h2>
 <p>We can generalise to multiple equations.</p>
+<div class="fragment">
+<p>They are:</p>
 <div>
 <ul>
 <li class="fragment">A system of multiple linear functions</li>
-<li class="fragment">Can be represented by matrices</li>
-<li class="fragment">Systems of linear equatiosn can have 0, 1 or many solutions</li>
+<li class="fragment">Which can be represented by matrices</li>
+<li class="fragment">They can have 0, 1, or many solutions</li>
 </ul>
 </div>
+</div>
 </section>
-<section id="example-1" class="slide level2">
+<section id="example-1-1" class="slide level2">
 <h2>Example 1</h2>
 <span class="math display">\[\begin{align}
 x+y=10
@@ -458,7 +523,7 @@ x+y=10
       }</style></aside>
 </div>
 </section>
-<section id="example-2" class="slide level2">
+<section id="example-2-1" class="slide level2">
 <h2>Example 2</h2>
 <span class="math display">\[\begin{align}
 x+y=10
@@ -522,25 +587,85 @@ x_1+x_2+x_3+x_4=10
 <h1>Matrices</h1>
 
 </section>
+<section id="matrix-notation" class="slide level2">
+<h2>Matrix notation</h2>
+<span class="math display">\[\begin{align}
+x_1+x_2+x_3+x_4=10
+\\ x_1+4x_2+x_3+x_4=25
+\\ x_1+4x_2+43x_3+x_4=37
+\\ x_1+4x_2+7x_3+59x_4=1073
+\end{align}\]</span>
+<div class="fragment">
+<p>Can be written as:</p>
+<span class="math display">\[\begin{align}
+\begin{bmatrix}1&amp;1&amp;1&amp;1\cr1&amp;4&amp;1&amp;1\cr1&amp;4&amp;43&amp;1\cr1&amp;4&amp;7&amp;59\end{bmatrix}\begin{pmatrix}x_1\cr x_2\cr x_3\cr x_4\end{pmatrix} = \begin{pmatrix}10\cr 25\cr 37\cr 1073\end{pmatrix}
+\end{align}\]</span>
+</div>
+</section>
 <section id="generalised-matrix-form" class="slide level2">
 <h2>Generalised matrix form</h2>
+<p>The generalised matrix form (for a 4x4 matrix is):</p>
+<span class="math display">\[\begin{align}
+\begin{bmatrix}a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; a_{1,4}\cr a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; a_{2,4}\cr a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; a_{3,4}\cr a_{4,1} &amp; a_{4,2} &amp; a_{4,3} &amp; a_{4,4}\end{bmatrix}\begin{pmatrix}x_1\cr x_2\cr x_3\cr x_4\end{pmatrix} = \begin{pmatrix}y_1 \cr y_2 \cr y_3 \cr y_4\end{pmatrix}
+\end{align}\]</span>
 </section>
-<section id="along-the-corridor-and-down-the-stairs" class="slide level2">
-<h2>Along the corridor, and down the stairs</h2>
+<section id="along-the-corridor-down-the-stairs" class="slide level2">
+<h2>Along the corridor, down the stairs</h2>
+<p>Matrices are indexed by row (<span class="math inline">\(m\)</span>) and by column (<span class="math inline">\(n\)</span>).</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><span class="math inline">\(m=2\)</span>, <span class="math inline">\(n=2\)</span> matrix:</p>
+<span class="math display">\[\begin{align}
+\begin{bmatrix}1&amp;1\cr1&amp;4\end{bmatrix}
+\end{align}\]</span>
+<div class="fragment">
+<p><span class="math inline">\(m=3\)</span>, <span class="math inline">\(n=2\)</span> matrix:</p>
+<span class="math display">\[\begin{align}
+\begin{bmatrix}1&amp;1&amp;2\cr1&amp;4&amp;7\end{bmatrix}
+\end{align}\]</span>
+</div>
+<div class="fragment">
+<div style="background-color:#2e6260; color:white; padding:8px; border-radius:5px; margin-top:10px;">
+<p><em>Note</em></p>
+When <span class="math inline">\(m=n\)</span> we have a square matrix.
+</div>
+</div>
 </section>
 <section id="matrix-addition" class="slide level2">
 <h2>Matrix addition</h2>
+<span class="math display">\[\begin{align}
+\begin{bmatrix}1&amp;1\cr1&amp;4\end{bmatrix} + \begin{bmatrix}1&amp;0\cr2&amp;6\end{bmatrix} = \begin{bmatrix}2&amp;1\cr3&amp;10\end{bmatrix}
+\end{align}\]</span>
+<p>We denote matrices by capital letters: <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, … :</p>
 </section>
 <section id="matrix-multiplication" class="slide level2">
 <h2>Matrix multiplication</h2>
+</section>
+<section id="identity-matrix" class="slide level2">
+<h2>Identity matrix</h2>
+</section>
+<section id="inverse-matrix" class="slide level2">
+<h2>Inverse matrix</h2>
 </section></section>
+<section>
 <section id="solving-systems-of-equations" class="title-slide slide level1 center">
 <h1>Solving systems of equations</h1>
 
 </section>
-
+<section id="writing-in-matrix-form" class="slide level2">
+<h2>Writing in matrix form</h2>
+</section>
+<section id="simplifying" class="slide level2">
+<h2>Simplifying</h2>
+</section></section>
+<section>
 <section id="overview" class="title-slide slide level1 center">
 <h1>Overview</h1>
+
+</section>
+<section id="covered" class="slide level2">
+<h2>Covered</h2>
 <p>We’ve covered:</p>
 <ul>
 <li>Mathematical notation</li>
@@ -550,14 +675,18 @@ x_1+x_2+x_3+x_4=10
 <li>Algebraic representations</li>
 </ul>
 </section>
-
+<section id="key-takeaways" class="slide level2">
+<h2>Key takeaways</h2>
+</section></section>
 <section id="practical" class="title-slide slide level1 center">
 <h1>Practical</h1>
 <p>The practical will focus on understanding mathematical equations.</p>
+<div class="fragment">
 <ul>
 <li>Have questions prepared!</li>
 </ul>
 
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
