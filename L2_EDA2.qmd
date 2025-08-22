@@ -28,8 +28,6 @@ title-slide-attributes:
 jupyter: python3
 ---
 
-# Key Information 
-
 # Last week
 
 ## Overview of lecture 1
@@ -84,9 +82,7 @@ We could try and find someone on campus who is over 6ft.
 
 . . .
 
-::: {.fragment .highlight-red}
 Better to try and understand the distribution of heights. 
-:::
 
 ::: {.notes}
 This week thinking about the distribution of data. 
@@ -122,7 +118,9 @@ We need to choose our sample carefully. We want what happens in the sample to ap
 **In practise**
 
 ::: {.incremental}
-Need to add something here... 
+- different sampling approaches
+  - random sampling 
+  - systematic sampling 
 :::
 
 # Is the data representative? 
@@ -334,6 +332,14 @@ Note importance of sampling distributions.
 
 In the case of the normal distribution: Std represented by σ vs std represented by σ/√n
 
+## Calculating probabilities 
+
+Can use the PDF to evaluate the probability at a specific point. 
+
+Generally want the probability that $x>p$ or $x<=p$. 
+
+Area under the curve.
+
 ## Example: distance to school 
 
 ## Not everything is normal 
@@ -351,7 +357,16 @@ But not all ---  might not have a characteristic size, or not continuous, or not
 **Discrete data**
 
 ## Back to the probability density function 
-Why it’s useful – see next week, allows us to evaluate the probability of events, and hence evaluate hypotheses 
+
+```{=tex}
+\begin{align}
+p(x)
+\end{align}
+```
+
+The PDF allows us to evaluate the probability of events, and hence evaluate hypotheses. 
+
+
 
 ## Sampling distributions 
 Specific for different probability distributions (/n)
@@ -612,9 +627,12 @@ Like pi comes from geometry (circles etc), e comes from the limit of the equatio
 
 ## When I can feed my town?
 
-Allows us to answer questions like: "how many grain of rice at t=10?"
+Allows us to answer questions like: 
 
-Answering questions like “Or when will I have enough rice to feed my entire town?” 
+::: {.incremental}
+- "how many grains of rice at t=10?"
+- “when will I have enough rice to feed my entire town?” 
+:::
 
 This is easier said than done – the best way is to invert the equation.
 
@@ -674,10 +692,38 @@ Read the equation as log of 8 base 2 equals 3.
 
 ## Natural logarithm 
 
+<div style="text-align:center;">
+  <img src="L2_images/natural_logarithm.png" alt="Natural logarithm" style="max-width:90%;">
+</div>
 
 ## Log rules 
 
+There are some general rules for how we apply logarithms:
 
+```{=tex}
+\begin{align}
+log_a(b \times c) &= log_a(b) + log_a(c)
+\\ log_a(\frac{b}{c}) &= log_a(b)-loc_b(c)
+\\ log_a(b^c) &= c \times log_a(b)
+\\ log_a(1)&=0
+\\ log_a(a)&=1
+\end{align}
+```
+
+## Transforming data 
+
+Some of the most important rules: 
+
+```{=tex}
+\begin{align}
+log_a(a^x) = x
+\\ ln(e^x) = x
+\end{align}
+```
+
+. . .
+
+When we have exponential data we can take the logarithm of it - and hence simplify it. 
 
 # Overview 
 We've covered: 

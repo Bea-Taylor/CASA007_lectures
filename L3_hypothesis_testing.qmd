@@ -107,6 +107,16 @@ By the end of this lecture you should be able to:
 
 # How do you come up with a hypothesis? 
 
+## Research question vs. hypothesis 
+
+**Research question** 
+
+A research question focuses on a specific problem.
+
+**Hypothesis**
+
+A statement that you will seek to confirm or disprove.
+
 ## Flip a coin
 
 :::: {.columns}
@@ -119,6 +129,28 @@ By the end of this lecture you should be able to:
 - You toss it 10 times. 
 - It comes up heads 7 times. 
 :::
+
+:::
+
+::::
+
+## The hypothesis
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- You have a coin. 
+- [You think it's a fair coin.]{style="color:#49a0c4"} 
+- You toss it 10 times. 
+- It comes up heads 7 times. 
+
+:::
+
+::: {.column width="50%"}
+
+<div style="background-color:#2e6260; color:white; padding:8px; border-radius:5px; margin-top:10px;"> 
+The hypothesis is that it is a fair coin. </div>
 
 :::
 
@@ -182,7 +214,7 @@ If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR A
 ::::
 
 
-# Establishing a Hypothesis 
+# Establishing and evaluating a Hypothesis 
 
 ## Step 1
 **Define the null and alternative hypothesis**
@@ -214,6 +246,12 @@ If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR A
 
 ## Step 3
 **Identify the evidence**
+
+```{=tex}
+\begin{align}
+f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{align}
+```
 
 ::: {.incremental}
 - This could mean collecting the data
@@ -269,7 +307,9 @@ This is caused by a **false positive**. The null hypothesis is true, but you get
 
 This is caused by a **false negative**. The null hypothesis is false, but you get a false negative result, leading you to accepting the null hypothesis. 
 
-## Example 
+## A pregnancy scare 
+
+Classic example 
 
 ## Matrix of errors 
 
@@ -362,10 +402,34 @@ It's a process
 
 ::::
 
+<!-- # Example: Height of students 
+What is the probability of someone at UCL being over 6ft?
 
+## Example - step 1
+**Define the null and alternative hypothesis**
+
+H0: Probability of injury has not changed. 
+
+H1: Probability of injury has changed. 
+
+## Example - step 2
+**Set your significance level**
+
+𝜶 = 0.05 
+
+## Example - step 3
+**Identify the evidence**
+
+Dataset: heights of students 
+
+## Example - step 4
+**Calculate the p-value**
+
+Aha! -->
 
 
 # Example: cyclists in London 
+Is cycling in London less safe since the introduction of Lime bikes?
 
 ## Example - step 1
 **Define the null and alternative hypothesis**
@@ -389,26 +453,33 @@ Dataset:
 
 Aha!
 
+. . .
+
+We need to know what statistical test to use! 
+
 
 # Statistical tests 
 
 ## Parametric vs. Non-parametric tests
 
-## Parametric Tests 
+**Parametric Tests**
+
 - Evaluate hypothesis for specific parameters 
 - Typically have assumptions about the distribution - e.g. assumed normal distribution 
 
-## Non-parametric Tests 
+**Non-parametric Tests**
+
 - Evaluate hypotheis for entire population distirbution 
 - Typcially less assumptions on the ditribution 
+
+# Parametric tests 
+
 
 ## How many tails 
 
 Tests can be one-tailed or two-tailed. 
 
 ![](L3_images/one-tailed-vs-two-tailed-test.jpg){.absolute top="170" left="30" width="700"}
-
-# Parametric tests 
 
 ## T-test 
 Assumes the data is normally distributed. 
@@ -442,7 +513,6 @@ Compares the mean of two distributions.
 - Or to test whether two samples both came from the same distribution
 :::
 
-## Example
 
 ## Kernel density estimate 
 ::: {.incremental}
@@ -451,7 +521,31 @@ Compares the mean of two distributions.
 - There are no assumptions about the prior distribution
 :::
 
-## Example 
+# Example: cyclists in London 
+
+## Example - step 1, 2, 3
+**Define the null and alternative hypothesis**
+
+H0: Probability of injury has not changed. 
+
+H1: Probability of injury has changed. 
+
+**Set your significance level**
+
+𝜶 = 0.05 
+
+
+**Identify the evidence**
+
+Dataset: 
+
+## Example - step 4
+**Calculate the p-value**
+
+Aha!
+
+## Example - step 5
+**Compare p-value with hypothesis level**
 
 # Overview 
 We've covered: 

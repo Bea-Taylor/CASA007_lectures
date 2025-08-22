@@ -144,11 +144,6 @@
 
 
 </section>
-<section id="key-information" class="title-slide slide level1 center">
-<h1>Key Information</h1>
-
-</section>
-
 <section>
 <section id="last-week" class="title-slide slide level1 center">
 <h1>Last week</h1>
@@ -220,9 +215,7 @@
 </div>
 </div>
 <div class="fragment">
-<div class="fragment highlight-red">
 <p>Better to try and understand the distribution of heights.</p>
-</div>
 <aside class="notes">
 <p>This week thinking about the distribution of data. How do we understand the spread of height data, how to we calculate important features of this data, how can we describe this data using mathematical equations?</p>
 <p>Next week, thinking about formulating and answering the research question.</p>
@@ -274,7 +267,13 @@
 <div class="fragment">
 <p><strong>In practise</strong></p>
 <div>
-<p>Need to add something here…</p>
+<ul>
+<li class="fragment">different sampling approaches
+<ul>
+<li class="fragment">random sampling</li>
+<li class="fragment">systematic sampling</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </section></section>
@@ -526,6 +525,12 @@
 <p>Note importance of sampling distributions.</p>
 <p>In the case of the normal distribution: Std represented by σ vs std represented by σ/√n</p>
 </section>
+<section id="calculating-probabilities" class="slide level2">
+<h2>Calculating probabilities</h2>
+<p>Can use the PDF to evaluate the probability at a specific point.</p>
+<p>Generally want the probability that <span class="math inline">\(x&gt;p\)</span> or <span class="math inline">\(x&lt;=p\)</span>.</p>
+<p>Area under the curve.</p>
+</section>
 <section id="example-distance-to-school" class="slide level2">
 <h2>Example: distance to school</h2>
 </section>
@@ -548,7 +553,10 @@
 </section>
 <section id="back-to-the-probability-density-function" class="slide level2">
 <h2>Back to the probability density function</h2>
-<p>Why it’s useful – see next week, allows us to evaluate the probability of events, and hence evaluate hypotheses</p>
+<span class="math display">\[\begin{align}
+p(x)
+\end{align}\]</span>
+<p>The PDF allows us to evaluate the probability of events, and hence evaluate hypotheses.</p>
 </section>
 <section id="sampling-distributions-1" class="slide level2">
 <h2>Sampling distributions</h2>
@@ -696,6 +704,19 @@
 </ul>
 </div>
 </div></div>
+<aside class="notes">
+<p>A bowl of rice is around 4,000 grains.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="writing-the-equation" class="slide level2">
 <h2>Writing the equation</h2>
@@ -824,10 +845,15 @@ e \approx 2.718...
           display:block!important;
       }</style></aside>
 </section>
-<section id="estimating-rabbit-populations" class="slide level2">
-<h2>Estimating rabbit populations</h2>
-<p>Allows us to answer questions like: “how many rabbits at t=10?”</p>
-<p>Answering questions like “Or when will the rabbit population=250?”</p>
+<section id="when-i-can-feed-my-town" class="slide level2">
+<h2>When I can feed my town?</h2>
+<p>Allows us to answer questions like:</p>
+<div>
+<ul>
+<li class="fragment">“how many grains of rice at t=10?”</li>
+<li class="fragment">“when will I have enough rice to feed my entire town?”</li>
+</ul>
+</div>
 <p>This is easier said than done – the best way is to invert the equation.</p>
 </section>
 <section id="inverse-operations" class="slide level2">
@@ -880,6 +906,31 @@ e^x = b \implies \log_e(b) =ln(b) = x
 </section>
 <section id="natural-logarithm" class="slide level2">
 <h2>Natural logarithm</h2>
+<div style="text-align:center;">
+<p><img src="L2_images/natural_logarithm.png" alt="Natural logarithm" style="max-width:90%;"></p>
+</div>
+</section>
+<section id="log-rules" class="slide level2">
+<h2>Log rules</h2>
+<p>There are some general rules for how we apply logarithms:</p>
+<span class="math display">\[\begin{align}
+log_a(b \times c) &amp;= log_a(b) + log_a(c)
+\\ log_a(\frac{b}{c}) &amp;= log_a(b)-loc_b(c)
+\\ log_a(b^c) &amp;= c \times log_a(b)
+\\ log_a(1)&amp;=0
+\\ log_a(a)&amp;=1
+\end{align}\]</span>
+</section>
+<section id="transforming-data" class="slide level2">
+<h2>Transforming data</h2>
+<p>Some of the most important rules:</p>
+<span class="math display">\[\begin{align}
+log_a(a^x) = x
+\\ ln(e^x) = x
+\end{align}\]</span>
+<div class="fragment">
+<p>When we have exponential data we can take the logarithm of it - and hence simplify it.</p>
+</div>
 </section></section>
 <section id="overview" class="title-slide slide level1 center">
 <h1>Overview</h1>

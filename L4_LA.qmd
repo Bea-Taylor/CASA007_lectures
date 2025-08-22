@@ -74,7 +74,7 @@ Maths underpins quantitative methods
 ::::
 
 
-## It doesn't bite 
+## Maths doesn't bite!
 
 <div style="text-align:center;">
   <img src="L4_images/maths_meme.jpg" alt="Woman confused by maths." style="max-width:90%">

@@ -244,6 +244,13 @@
 <h1>How do you come up with a hypothesis?</h1>
 
 </section>
+<section id="research-question-vs.-hypothesis" class="slide level2">
+<h2>Research question vs.&nbsp;hypothesis</h2>
+<p><strong>Research question</strong></p>
+<p>A research question focuses on a specific problem.</p>
+<p><strong>Hypothesis</strong></p>
+<p>A statement that you will seek to confirm or disprove.</p>
+</section>
 <section id="flip-a-coin" class="slide level2">
 <h2>Flip a coin</h2>
 <div class="columns">
@@ -255,6 +262,22 @@
 <li class="fragment">You toss it 10 times.</li>
 <li class="fragment">It comes up heads 7 times.</li>
 </ul>
+</div>
+</div></div>
+</section>
+<section id="the-hypothesis" class="slide level2">
+<h2>The hypothesis</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>You have a coin.</li>
+<li><span style="color:#49a0c4">You think it’s a fair coin.</span></li>
+<li>You toss it 10 times.</li>
+<li>It comes up heads 7 times.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="background-color:#2e6260; color:white; padding:8px; border-radius:5px; margin-top:10px;">
+The hypothesis is that it is a fair coin.
 </div>
 </div></div>
 </section>
@@ -296,8 +319,8 @@
 </div></div>
 </section></section>
 <section>
-<section id="establishing-a-hypothesis" class="title-slide slide level1 center">
-<h1>Establishing a Hypothesis</h1>
+<section id="establishing-and-evaluating-a-hypothesis" class="title-slide slide level1 center">
+<h1>Establishing and evaluating a Hypothesis</h1>
 
 </section>
 <section id="step-1" class="slide level2">
@@ -335,6 +358,9 @@
 <section id="step-3" class="slide level2">
 <h2>Step 3</h2>
 <p><strong>Identify the evidence</strong></p>
+<span class="math display">\[\begin{align}
+f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{align}\]</span>
 <div>
 <ul>
 <li class="fragment">This could mean collecting the data</li>
@@ -490,11 +516,35 @@
 </ul>
 </div>
 </div></div>
+<!-- # Example: Height of students 
+What is the probability of someone at UCL being over 6ft?
+
+## Example - step 1
+**Define the null and alternative hypothesis**
+
+H0: Probability of injury has not changed. 
+
+H1: Probability of injury has changed. 
+
+## Example - step 2
+**Set your significance level**
+
+𝜶 = 0.05 
+
+## Example - step 3
+**Identify the evidence**
+
+Dataset: heights of students 
+
+## Example - step 4
+**Calculate the p-value**
+
+Aha! -->
 </section></section>
 <section>
 <section id="example-cyclists-in-london" class="title-slide slide level1 center">
 <h1>Example: cyclists in London</h1>
-
+<p>Is cycling in London less safe since the introduction of Lime bikes?</p>
 </section>
 <section id="example---step-1" class="slide level2">
 <h2>Example - step 1</h2>
@@ -516,6 +566,9 @@
 <h2>Example - step 4</h2>
 <p><strong>Calculate the p-value</strong></p>
 <p>Aha!</p>
+<div class="fragment">
+<p>We need to know what statistical test to use!</p>
+</div>
 </section></section>
 <section>
 <section id="statistical-tests" class="title-slide slide level1 center">
@@ -524,30 +577,26 @@
 </section>
 <section id="parametric-vs.-non-parametric-tests" class="slide level2">
 <h2>Parametric vs.&nbsp;Non-parametric tests</h2>
-</section>
-<section id="parametric-tests" class="slide level2">
-<h2>Parametric Tests</h2>
+<p><strong>Parametric Tests</strong></p>
 <ul>
 <li>Evaluate hypothesis for specific parameters</li>
 <li>Typically have assumptions about the distribution - e.g.&nbsp;assumed normal distribution</li>
 </ul>
-</section>
-<section id="non-parametric-tests" class="slide level2">
-<h2>Non-parametric Tests</h2>
+<p><strong>Non-parametric Tests</strong></p>
 <ul>
 <li>Evaluate hypotheis for entire population distirbution</li>
 <li>Typcially less assumptions on the ditribution</li>
 </ul>
+</section></section>
+<section>
+<section id="parametric-tests" class="title-slide slide level1 center">
+<h1>Parametric tests</h1>
+
 </section>
 <section id="how-many-tails" class="slide level2">
 <h2>How many tails</h2>
 <p>Tests can be one-tailed or two-tailed.</p>
 <p><a href="L3_images/one-tailed-vs-two-tailed-test.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="L3_images/one-tailed-vs-two-tailed-test.jpg" class="absolute" style="top: 170px; left: 30px; width: 700px; "></a></p>
-</section></section>
-<section>
-<section id="parametric-tests-1" class="title-slide slide level1 center">
-<h1>Parametric tests</h1>
-
 </section>
 <section id="t-test" class="slide level2">
 <h2>T-test</h2>
@@ -570,7 +619,7 @@
 <p>Compares the mean of two distributions.</p>
 </section></section>
 <section>
-<section id="non-parametric-tests-1" class="title-slide slide level1 center">
+<section id="non-parametric-tests" class="title-slide slide level1 center">
 <h1>Non-parametric tests</h1>
 
 </section>
@@ -584,9 +633,6 @@
 </ul>
 </div>
 </section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
-</section>
 <section id="kernel-density-estimate" class="slide level2">
 <h2>Kernel density estimate</h2>
 <div>
@@ -596,9 +642,30 @@
 <li class="fragment">There are no assumptions about the prior distribution</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="example-cyclists-in-london-1" class="title-slide slide level1 center">
+<h1>Example: cyclists in London</h1>
+
 </section>
-<section id="example-2" class="slide level2">
-<h2>Example</h2>
+<section id="example---step-1-2-3" class="slide level2">
+<h2>Example - step 1, 2, 3</h2>
+<p><strong>Define the null and alternative hypothesis</strong></p>
+<p>H0: Probability of injury has not changed.</p>
+<p>H1: Probability of injury has changed.</p>
+<p><strong>Set your significance level</strong></p>
+<p>𝜶 = 0.05</p>
+<p><strong>Identify the evidence</strong></p>
+<p>Dataset:</p>
+</section>
+<section id="example---step-4-1" class="slide level2">
+<h2>Example - step 4</h2>
+<p><strong>Calculate the p-value</strong></p>
+<p>Aha!</p>
+</section>
+<section id="example---step-5" class="slide level2">
+<h2>Example - step 5</h2>
+<p><strong>Compare p-value with hypothesis level</strong></p>
 </section></section>
 <section id="overview" class="title-slide slide level1 center">
 <h1>Overview</h1>
