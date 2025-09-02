@@ -400,13 +400,13 @@ The hypothesis is that it is a fair coin.
 <h2>Step 1</h2>
 <p><strong>Define the null and alternative hypothesis</strong></p>
 <div class="fragment">
-<p><span style="color:#49a0c4"><strong>H0</strong> - the null hypothesis</span></p>
+<p><span style="color:#49a0c4"><strong><span class="math inline">\(H_0\)</span></strong> - the null hypothesis</span></p>
 <ul>
 <li>this is the “status quo”</li>
 </ul>
 </div>
 <div class="fragment">
-<p><span style="color:#49a0c4"><strong>H1</strong> - the alternative hypothesis</span></p>
+<p><span style="color:#49a0c4"><strong><span class="math inline">\(H_1\)</span></strong> - the alternative hypothesis</span></p>
 <ul>
 <li>your hypothesis</li>
 <li>needs some evidence to verify</li>
@@ -475,12 +475,12 @@ f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <li class="fragment">p-value &gt; <span class="math inline">\(\alpha\)</span>
 <ul>
 <li class="fragment">Evidence not that unlikely.</li>
-<li class="fragment">Not enough evidence to reject H0.</li>
+<li class="fragment">Not enough evidence to reject <span class="math inline">\(H_0\)</span>.</li>
 </ul></li>
 <li class="fragment">p-value <span class="math inline">\(\leq \alpha\)</span>
 <ul>
 <li class="fragment">Evidence very unlikely.</li>
-<li class="fragment">Reject H0 and accept H1.</li>
+<li class="fragment">Reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_1\)</span>.</li>
 </ul></li>
 </ul>
 </div>
@@ -663,42 +663,86 @@ Dataset: heights of students
 Aha! -->
 </section></section>
 <section>
-<section id="example-cyclists-in-london" class="title-slide slide level1 center">
-<h1>Example: cyclists in London</h1>
-<p>Is cycling in London less safe since the introduction of Lime bikes?</p>
-</section>
-<section id="example---context" class="slide level2">
-<h2>Example - context</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
+<section id="example-students-height" class="title-slide slide level1 center">
+<h1>Example: students height</h1>
+<p><span style="color:#49a0c4"><em>Research question</em></span><br>
+Are male and female students similar heights?</p>
+<p><span style="color:#49a0c4"><em>Research hypothesis</em></span><br>
+On average female students are shorter than male students.</p>
+<!-- ## Example - context 
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
 <div style="text-align: center;">
-<p><a href="L3_images/timmy_bike.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="L3_images/timmy_bike.jpg" width="700"></a></p>
+![](L3_images/timmy_bike.jpg){width="700"}
 </div>
-</div><div class="column" style="width:40%;">
-<div>
-<ul>
-<li class="fragment">UK gov reports cycling fatalities per year</li>
-<li class="fragment">Lime bikes introduced to the UK in 2021</li>
-</ul>
-</div>
-</div></div>
+
+:::
+
+::: {.column width="40%"}
+
+::: {.incremental}
+- UK gov reports cycling fatalities per year 
+- Lime bikes introduced to the UK in 2021 
+:::
+
+:::
+
+:::: -->
 </section>
 <section id="example---step-1" class="slide level2">
 <h2>Example - step 1</h2>
 <p><strong>Define the null and alternative hypothesis</strong></p>
-<p>H0: Probability of injury has not changed.</p>
-<p>H1: Probability of injury has changed.</p>
+<div class="fragment">
+<p><span class="math inline">\(H_0\)</span>: The mean height of male and female students is the same.</p>
+<p><span class="math inline">\(H_1\)</span>: The mean height of male and female students is different.</p>
+</div>
 </section>
 <section id="example---step-2" class="slide level2">
 <h2>Example - step 2</h2>
 <p><strong>Set your significance level</strong></p>
+<div class="fragment">
 <p><span class="math inline">\(\alpha = 0.05\)</span></p>
+</div>
 </section>
 <section id="example---step-3" class="slide level2">
 <h2>Example - step 3</h2>
 <p><strong>Identify the evidence</strong></p>
-<p>Dataset:</p>
-<p>NEED TO DO THIS!!</p>
+<div class="fragment">
+<p><br></p>
+<p>I’ve collected data from 198 students, as follows:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Sample Size</th>
+<th>Mean (cm)</th>
+<th>std (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Female students</td>
+<td>95</td>
+<td>170</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Male students</td>
+<td>103</td>
+<td>180</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<!-- Group 1 – female students  
+$\bar{x}_1 = 170$, $s_1 = 5$, $n_1 = 95$  
+
+Group 2 – male students  
+$\bar{x}_2 = 180$, $s_2 = 6$, $n_2 = 103$ -->
+</div>
 </section>
 <section id="example---step-4" class="slide level2">
 <h2>Example - step 4</h2>
@@ -740,9 +784,9 @@ Aha! -->
 </section>
 <section id="students-t-test" class="slide level2">
 <h2>Student’s T-test</h2>
-<p><span style="color:#49a0c4"><em>Student’s T-test is used to compare the mean of a dataset.</em></span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p><span style="color:#49a0c4"><em>Student’s T-test is used to compare the mean of a dataset.</em></span></p>
 <div>
 <ul>
 <li class="fragment">parametric statistical test</li>
@@ -800,8 +844,10 @@ t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
 <ul>
 <li><span class="math inline">\(\bar{x}_1, \bar{x}_2\)</span> are the sample means of groups 1 and 2</li>
 <li><span class="math inline">\(n_1, n_2\)</span> are the sample sizes of groups 1 and 2</li>
-<li><span class="math inline">\(s_p\)</span> is the pooled standard deviation:</li>
+<li><span class="math inline">\(s_p\)</span> is the pooled standard deviation</li>
 </ul>
+</div>
+<div class="fragment">
 <span class="math display">\[\begin{align}
 s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}
 \end{align}\]</span>
@@ -822,71 +868,29 @@ t = \frac{\bar{d}}{s_d / \sqrt{n}}
 <li><span class="math inline">\(s_d\)</span> is the standard deviation of the paired differences</li>
 <li><span class="math inline">\(n\)</span> is the number of pairs</li>
 </ul>
+<aside class="notes">
+<p>For example used when I have data from different years, and want to figure out if there’s a difference across the years.</p>
+<p>You need to be able to pair the data - i.e.&nbsp;the same things being observed at time point 1 and time point 2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
 <section id="how-many-tails" class="slide level2">
 <h2>How many tails</h2>
 <p>Tests can be one-tailed or two-tailed. Determined when you define the hypothesis.</p>
-<p><em>One tailed:</em> if you only care is the mean is significant in one direction <em>Two tailed:</em> if you care about the mean being different regardless of bigger or smaller</p>
+<p><em>One tailed:</em> if you only care is the mean is significant in one direction <em>Two tailed:</em> if you care about the mean being different regardless of direction</p>
 <div style="text-align:center;">
 <p><img src="L3_images/one_vs_two_tailed.png" alt="Normal distribution with one vs two tails." style="max-width:100%"></p>
 </div>
-</section>
-<section id="students-t-test-example" class="slide level2">
-<h2>Student’s T-test: example</h2>
-<p><span style="color:#49a0c4"><em>Research question</em></span><br>
-Are male and female students similar heights?</p>
-<p><span style="color:#49a0c4"><em>Research hypothesis</em></span><br>
-The mean height of female students is different to male students.</p>
-<p><span style="color:#49a0c4">H0:</span><br>
-The mean height of male and female students is the same</p>
-<p><span style="color:#49a0c4">H1:</span><br>
-The mean height of male and female students is different<br>
-<br></p>
-<p>Group 1 – female students<br>
-<span class="math inline">\(\bar{x}_1 = 170\)</span>, <span class="math inline">\(s_1 = 5\)</span>, <span class="math inline">\(n_1\)</span> = 95</p>
-<p>Group 2 – male students<br>
-<span class="math inline">\(\bar{x}_2 = 180\)</span>, <span class="math inline">\(s_2 = 6\)</span>, <span class="math inline">\(n_2\)</span> = 103</p>
-<p>Two-tailed test with <span class="math inline">\(\alpha=0.5\)</span>.</p>
-</section>
-<section id="students-t-test-calculation" class="slide level2">
-<h2>Student’s T-test: calculation</h2>
-<p><strong>Student’s T-test: two sample</strong></p>
-<p>Group 1 – female students<br>
-<span class="math inline">\(\bar{x}_1 = 170\)</span>, <span class="math inline">\(s_1 = 5\)</span>, <span class="math inline">\(n_1\)</span> = 95</p>
-<p>Group 2 – male students<br>
-<span class="math inline">\(\bar{x}_2 = 180\)</span>, <span class="math inline">\(s_2 = 6\)</span>, <span class="math inline">\(n_2\)</span> = 103</p>
-<p>Substituting values:</p>
-<span class="math display">\[\begin{align}
-s_p &amp;= \sqrt{\frac{(95-1)\cdot 5^2 + (103-1)\cdot 6^2}{95+103-2}} \approx 5.55
-\end{align}\]</span>
-<p>Now compute <span class="math inline">\(t\)</span>:</p>
-<span class="math display">\[\begin{align}
-t &amp;= \frac{170 - 180}{5.55 \cdot \sqrt{\tfrac{1}{95} + \tfrac{1}{103}}} \approx -12.7
-\end{align}\]</span>
-</section>
-<section id="students-t-test-determine-outcome" class="slide level2">
-<h2>Student’s T-test: determine outcome</h2>
-<p>Now we need to compare the test statistic to the <strong>critical t-value</strong>.</p>
-<p>Degrees of freedom:</p>
-<p>In Python we can calculate the two-tailed critical t-value at <span class="math inline">\(\alpha = 0.05\)</span>:</p>
-<div id="166b4643" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
-<span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a>alpha <span class="op">=</span> <span class="fl">0.05</span></span>
-<span id="cb3-4"><a href=""></a>df <span class="op">=</span> <span class="dv">196</span></span>
-<span id="cb3-5"><a href=""></a></span>
-<span id="cb3-6"><a href=""></a><span class="co"># two-tailed: split alpha</span></span>
-<span id="cb3-7"><a href=""></a>t_crit <span class="op">=</span> t.ppf(<span class="dv">1</span> <span class="op">-</span> alpha<span class="op">/</span><span class="dv">2</span>, df)</span>
-<span id="cb3-8"><a href=""></a><span class="bu">print</span>(<span class="st">"Critical t-value:"</span>, t_crit.<span class="bu">round</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Critical t-value: 1.97</code></pre>
-</div>
-</div>
-<p>Decision rule:</p>
-<p>If <span class="math inline">\(|t| &gt; 1.972\)</span>, reject <span class="math inline">\(H_0\)</span></p>
-<p>Our test statistic was <span class="math inline">\(t \approx -12.7\)</span> → <span class="math inline">\(|-12.7| \gg 1.972\)</span></p>
-<p><strong>Conclusion:</strong> Reject <span class="math inline">\(H_0\)</span>: male and female students have significantly different heights.</p>
 <!-- ## Regression T-tests
 
 Is the gradient non-zero?
@@ -902,8 +906,8 @@ This will be covered further in lecture X on linear regression.  -->
 <h1>Non-parametric tests</h1>
 
 </section>
-<section id="kolmogorov-smirnov-test" class="slide level2">
-<h2>Kolmogorov-Smirnov test</h2>
+<section id="kolmogorov-smirnov" class="slide level2">
+<h2>Kolmogorov-Smirnov</h2>
 <div>
 <ul>
 <li class="fragment">Compares two probability distributions</li>
@@ -912,39 +916,176 @@ This will be covered further in lecture X on linear regression.  -->
 </ul>
 </div>
 </section>
-<section id="kernel-density-estimate" class="slide level2">
-<h2>Kernel density estimate</h2>
+<section id="k-s-empirical-distribution-function" class="slide level2">
+<h2>K-S: empirical distribution function</h2>
+<p>The empirical distribution function (EDF) is:</p>
+<span class="math display">\[\begin{align}
+F_{n}(x) = \frac{1}{n} \sum_{i=1}^{n} 1_{(-\infty ,x]}(X_{i})
+\end{align}\]</span>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(n\)</span> is the number of observations</li>
+<li><span class="math inline">\(X_i\)</span> are the ordered sample values</li>
+<li><span class="math inline">\(1_{(-\infty ,x]}(X_{i})\)</span> is an indicator function (1 if <span class="math inline">\(X_i \leq x\)</span>, else 0)</li>
+</ul>
+</section>
+<section id="k-s-test-one-sample-test" class="slide level2">
+<h2>K-S test: one sample test</h2>
+<p>The Kolmogorov–Smirnov test statistic is:</p>
+<span class="math display">\[\begin{align}
+D_n = \sup_x \, | F_n(x) - F(x) |
+\end{align}\]</span>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(F_n(x)\)</span> is the empirical distribution function of the sample</li>
+<li><span class="math inline">\(F(x)\)</span> is the cumulative distribution function (CDF) of the reference distribution</li>
+</ul>
+<div class="fragment">
+<div style="background-color:#2e6260; color:white; padding:8px; border-radius:5px; margin-top:10px;">
+<p><em>Note</em></p>
+‘<span class="math inline">\(sup\)</span>’ is the suprenum - think of it as the smallest upper bound.
+</div>
+</div>
+</section>
+<section id="k-s-test-two-sample-test" class="slide level2">
+<h2>K-S test: two sample test</h2>
+<p>For the two-sample test:</p>
+<span class="math display">\[\begin{align}
+D_{n,m} = \sup_x \, | F_n(x) - G_m(x) |
+\end{align}\]</span>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(F_n(x)\)</span> and <span class="math inline">\(G_m(x)\)</span> are the EDFs of the two samples.</li>
+</ul>
+</section>
+<section id="k-s-test-decision-rule" class="slide level2">
+<h2>K-S test: decision rule</h2>
+<p>The hypotheses would be:</p>
+<p><span class="math inline">\(H_0\)</span>: the distributions are the same <span class="math inline">\(H_1\)</span>: the distributions differ</p>
+<p>Larger values of the test statistic <span class="math inline">\(D\)</span> is stronger evidence against <span class="math inline">\(H_0\)</span>.</p>
+</section>
+<section id="kernel-density-estimate-kde" class="slide level2">
+<h2>Kernel density estimate (KDE)</h2>
 <div>
 <ul>
 <li class="fragment">Used to generate a smooth PDF for a random variable dataset.</li>
+<li class="fragment">Useful for understanding the underlying distribution of a sample .</li>
 <li class="fragment">Think of it as getting a smooth function to describe a histogram of data.</li>
-<li class="fragment">There are no assumptions about the prior distribution</li>
+<li class="fragment">There are no assumptions about the prior distribution.</li>
+</ul>
+</div>
+</section>
+<section id="kde-of-simulated-heights" class="slide level2">
+<h2>KDE of simulated heights</h2>
+<p>It’s easy to fit a KDE to data in Python:</p>
+<div id="d3e2b307" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb3-3"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> gaussian_kde</span>
+<span id="cb3-4"><a href=""></a></span>
+<span id="cb3-5"><a href=""></a><span class="co"># Supposing you have some data </span></span>
+<span id="cb3-6"><a href=""></a>data <span class="op">=</span> pd.read_csv(<span class="st">'/path_to_data'</span>)</span>
+<span id="cb3-7"><a href=""></a></span>
+<span id="cb3-8"><a href=""></a><span class="co"># Kernel Density Estimation</span></span>
+<span id="cb3-9"><a href=""></a>kde <span class="op">=</span> gaussian_kde(data)</span>
+<span id="cb3-10"><a href=""></a>x_vals <span class="op">=</span> np.linspace(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">100</span>)</span>
+<span id="cb3-11"><a href=""></a>y_vals <span class="op">=</span> kde(x_vals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="kde-of-simulated-heights-1" class="slide level2">
+<h2>KDE of simulated heights</h2>
+<div style="text-align:center;">
+<p><img src="L3_images/height_histogram_kde.png" alt="KDE of heights." style="max-width:90%"></p>
+</div>
+</section>
+<section id="kde-use-case" class="slide level2">
+<h2>KDE use case</h2>
+<div>
+<ul>
+<li class="fragment">fit the KDE to two samples</li>
+<li class="fragment">compare visually</li>
+<li class="fragment">carry out non-paremetric test - such as Kolmogorov-Smirnov</li>
 </ul>
 </div>
 </section></section>
 <section>
-<section id="example-cyclists-in-london-1" class="title-slide slide level1 center">
-<h1>Example: cyclists in London</h1>
+<section id="example-students-height-1" class="title-slide slide level1 center">
+<h1>Example: students height</h1>
 
 </section>
 <section id="example---step-1-2-3" class="slide level2">
 <h2>Example - step 1, 2, 3</h2>
 <p><strong>Define the null and alternative hypothesis</strong></p>
-<p>H0: Probability of injury has not changed.</p>
-<p>H1: Probability of injury has changed.</p>
+<p><span class="math inline">\(H_0\)</span>: The mean height of male and female students is the same.</p>
+<p><span class="math inline">\(H_1\)</span>: The mean height of male and female students is different.</p>
+<div class="fragment">
 <p><strong>Set your significance level</strong></p>
-<p>𝜶 = 0.05</p>
+<p><span class="math inline">\(\alpha = 0.05\)</span></p>
+</div>
+<div class="fragment">
 <p><strong>Identify the evidence</strong></p>
-<p>Dataset:</p>
+<p>Group 1 – female students<br>
+<span class="math inline">\(\bar{x}_1 = 170\)</span>, <span class="math inline">\(s_1 = 5\)</span>, <span class="math inline">\(n_1\)</span> = 95</p>
+<p>Group 2 – male students<br>
+<span class="math inline">\(\bar{x}_2 = 180\)</span>, <span class="math inline">\(s_2 = 6\)</span>, <span class="math inline">\(n_2\)</span> = 103</p>
+</div>
 </section>
 <section id="example---step-4-1" class="slide level2">
 <h2>Example - step 4</h2>
 <p><strong>Calculate the p-value</strong></p>
-<p>Aha!</p>
+<ul>
+<li>Use Student’s T-test: two sample</li>
+<li>don’t care if students are taller or shorter - so use two-tailed test</li>
+</ul>
+</section>
+<section id="example---step-4---calculation" class="slide level2">
+<h2>Example - step 4 - calculation</h2>
+<p>Substituting values:</p>
+<span class="math display">\[\begin{align}
+s_p &amp;= \sqrt{\frac{(95-1)\cdot 5^2 + (103-1)\cdot 6^2}{95+103-2}} \approx 5.55
+\end{align}\]</span>
+<p>Now compute <span class="math inline">\(t\)</span>:</p>
+<span class="math display">\[\begin{align}
+t &amp;= \frac{170 - 180}{5.55 \cdot \sqrt{\tfrac{1}{95} + \tfrac{1}{103}}} \approx -12.7
+\end{align}\]</span>
 </section>
 <section id="example---step-5" class="slide level2">
 <h2>Example - step 5</h2>
 <p><strong>Compare p-value with hypothesis level</strong></p>
+<p>Now we need to compare the test statistic to the critical t-value.</p>
+</section>
+<section id="example---step-5---calculation" class="slide level2">
+<h2>Example - step 5 - calculation</h2>
+<p>For Student’s T-Test we need degrees of freedom:</p>
+<span class="math display">\[\begin{align}
+df = n_1 + n_2 - 2 = 95 + 103 - 2 = 196
+\end{align}\]</span>
+<p>Then use Python to calculate the two-tailed critical t-value at <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<div id="44fc8475" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a>alpha <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb4-4"><a href=""></a>df <span class="op">=</span> <span class="dv">196</span></span>
+<span id="cb4-5"><a href=""></a></span>
+<span id="cb4-6"><a href=""></a><span class="co"># two-tailed: split alpha</span></span>
+<span id="cb4-7"><a href=""></a>t_crit <span class="op">=</span> t.ppf(<span class="dv">1</span> <span class="op">-</span> alpha<span class="op">/</span><span class="dv">2</span>, df)</span>
+<span id="cb4-8"><a href=""></a><span class="bu">print</span>(<span class="st">"Critical t-value:"</span>, t_crit.<span class="bu">round</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Critical t-value: 1.97</code></pre>
+</div>
+</div>
+</section>
+<section id="example---conclusion" class="slide level2">
+<h2>Example - conclusion</h2>
+<p>Test statistic: <span class="math inline">\(t \approx -12.7\)</span>.</p>
+<p>Critical t-value at <span class="math inline">\(\alpha=0.05\)</span>: <span class="math inline">\(t_{crit} = 1.97\)</span></p>
+<div class="fragment">
+<p>Since</p>
+<span class="math display">\[\begin{align}
+t= |-12.7| \gg 1.97= t_crit
+\end{align}\]</span>
+<p>we reject <span class="math inline">\(H_0\)</span>. Male and female students have significantly different heights.</p>
+</div>
 </section></section>
 <section id="overview" class="title-slide slide level1 center">
 <h1>Overview</h1>
