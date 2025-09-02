@@ -24,6 +24,7 @@ title-slide-attributes:
     data-background-size: stretch
     data-background-opacity: "0.08"
     data-background-color: "#4e3c56"
+jupyter: python3
 ---
 
 # Last week
@@ -44,7 +45,7 @@ Continued concepts from data analysis, in particular probability distributions.
 **Question**
 
 ::: {.fragment .highlight-red}
-What is the probability of someone at UCL being over 6ft?
+What is the probability of someone at UCL being over 190cm?
 :::
 
 **How can we try to answer this?**
@@ -61,7 +62,28 @@ This week we look at how to pose and address the research question.
 
 ## Hypothesising 
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="text-align:center;">
+  <img src="L3_images/scientific_method.png" alt="The scientific method" style="max-width:100%">
+</div>
+
+
+:::
+
+::: {.column width="40%"}
+
+<br>
+
 Research science is about coming up with hypotheses and evaluating them.
+
+:::
+
+::::
+
+
 
 ::: {.notes}
 This lecture thinking about posing and answering reserach questions. 
@@ -115,7 +137,7 @@ A research question focuses on a specific problem.
 
 **Hypothesis**
 
-A statement that you will seek to confirm or disprove.
+A statement that you will seek to confirm or disprove the research question.
 
 ## Flip a coin
 
@@ -233,25 +255,25 @@ If the coin is fair, how likely would it be to see 7 heads out of 10 flips *OR A
 - needs some evidence to verify
 
 ## Step 2
-**Set your significance level 𝜶**
+**Set your significance level $\alpha$**
 
 [*The significance level is the threshold below which you reject the null hypothesis.*]{style="color:#49a0c4"} 
 
 ::: {.incremental}
 - Decide what “too unlikely” means **before you do the test**.
 - Common choice is 5% significance
-  - 𝜶 = 0.05 
-  - This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis. 
+  - $𝜶 = 0.05$ 
+  - This means that if we see evidence that would have less than a 5% chance of occurring under the null hypothesis, then we reject the null hypothesis. 
 :::
 
 ## Step 3
 **Identify the evidence**
 
-```{=tex}
+<!-- ```{=tex}
 \begin{align}
 f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 \end{align}
-```
+``` -->
 
 ::: {.incremental}
 - This could mean collecting the data
@@ -276,10 +298,10 @@ We'll come back to different types of statistical test later in the lecture
 **Compare p-value with significance level**
 
 ::: {.incremental}
-- p-value > 𝜶 
+- p-value > $\alpha$ 
   - Evidence not that unlikely. 
   - Not enough evidence to reject H0.
-- p-value ⩽ 𝜶 
+- p-value $\leq \alpha$ 
   - Evidence very unlikely. 
   - Reject H0 and accept H1.
 :::
@@ -307,14 +329,43 @@ This is caused by a **false positive**. The null hypothesis is true, but you get
 
 This is caused by a **false negative**. The null hypothesis is false, but you get a false negative result, leading you to accepting the null hypothesis. 
 
-## A pregnancy scare 
 
-Classic example 
+## Example: Mammograms
+
+<div style="text-align: center;">
+![](L3_images/mammogram_van_woman.avif){width="700"}
+</div>
+
+NHS offers breast cancer screening for all women between the ages of 50 and 70.
+
+::: {.notes}
+The idea is to screen all women in the popualtion at high risk of brast cancer - in the hope they pick up results better. 
+:::
+
+## Example: Screening outcomes 
+
+[**False positive**]{style="color:#abc766"} 
+
+The null hypothesis is that the patient doesn't have cancer. 
+$\approx$ 10% of tests return a false positive. The test says they do have cancer even when they don't. 
+
+. . .
+
+[**False negative**]{style="color:#abc766"} 
+
+The null hypothesis is that the patient doesn't have cancer. 
+$\approx$ 20% of tests return a false negative. The test says they don't have cancer but they do.
+
+::: {.notes}
+False positive is bad as you might pursue a healthcare treatment which is unecessary.
+
+False negative - in healthcare this is the worst outcome - as goes undiagnosed and hence untreated. 
+:::
 
 ## Matrix of errors 
 
 <div style="text-align:center;">
-  <img src="L3_images/error_matrix.png" alt="Error matrix" style="max-width:70%">
+  <img src="L3_images/error_matrix.png" alt="Error matrix" style="max-width:80%">
 </div>
 
 
@@ -354,7 +405,7 @@ It's important to not make unethical assumptions in choosing the hypothesis.
 
 . . .
 
-Lots of things can be correlated - but it doesn't mean one event caused another. 
+Lots of things can be correlated **BUT** it doesn't mean one event caused another. 
 
 ## Aliens and librarians
 
@@ -369,10 +420,19 @@ Lots of things can be correlated - but it doesn't mean one event caused another.
 </div>
 
 
-## Correlation IS NOT causation 
+## Correlation **IS NOT** causation 
 You might not know whether events are correlated, or causing each other. 
 
-The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions
+. . .
+
+<br>
+**BUT**
+
+. . .
+
+<br>
+
+The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions.
 
 ## The point of the scientific method
 
@@ -431,6 +491,30 @@ Aha! -->
 # Example: cyclists in London 
 Is cycling in London less safe since the introduction of Lime bikes?
 
+## Example - context 
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="text-align: center;">
+![](L3_images/timmy_bike.jpg){width="700"}
+</div>
+
+:::
+
+::: {.column width="40%"}
+
+::: {.incremental}
+- UK gov reports cycling fatalities per year 
+- Lime bikes introduced to the UK in 2021 
+:::
+
+:::
+
+::::
+
+
 ## Example - step 1
 **Define the null and alternative hypothesis**
 
@@ -441,12 +525,14 @@ H1: Probability of injury has changed.
 ## Example - step 2
 **Set your significance level**
 
-𝜶 = 0.05 
+$\alpha = 0.05$ 
 
 ## Example - step 3
 **Identify the evidence**
 
 Dataset: 
+
+NEED TO DO THIS!!
 
 ## Example - step 4
 **Calculate the p-value**
@@ -465,32 +551,210 @@ We need to know what statistical test to use!
 **Parametric Tests**
 
 - Evaluate hypothesis for specific parameters 
-- Typically have assumptions about the distribution - e.g. assumed normal distribution 
+- Typically have assumptions about the distribution 
+  - e.g. assumed normal distribution 
+- Continuous data 
+
+. . .
 
 **Non-parametric Tests**
 
-- Evaluate hypotheis for entire population distirbution 
-- Typcially less assumptions on the ditribution 
+- Evaluate hypothesis for entire population distribution 
+- Typcially less assumptions on the distribution 
+- Continuous or discrete data 
 
 # Parametric tests 
 
+## Student's T-test 
+[*Student's T-test is used to compare the mean of a dataset.*]{style="color:#49a0c4"} 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.incremental}
+- parametric statistical test 
+- assumes the data is normally distributed
+:::
+
+:::
+
+::: {.column width="50%"}
+
+<div style="text-align:center;">
+  <img src="L3_images/William_Sealy_Gosset.jpg" alt="A photograph of William Sealy Gosset" style="max-width:80%;">
+  <div style="font-size:0.8em; color: #555; margin-top:4px;">
+    This is William Sealy Gosset - he was **not** a student.
+    Image credit: https://en.wikipedia.org/wiki/William_Sealy_Gosset#/media/File:William_Sealy_Gosset.jpg
+    
+  </div>
+</div>
+
+:::
+
+::::
+
+::: {.notes}
+William Gosset was working for Guinness brewing company when he came up with the t-test - but his company wanted his to publish under a pseudonym - hence 'student'
+:::
+
+## Student's T-test: one sample
+[*Tests whether the population mean is equal to a specific value or not*]{style="color:#49a0c4"} 
+
+. . .
+
+The test statistic is calculated as: 
+
+```{=tex}
+\begin{align}
+t = \frac{\bar{x} - \mu_{0}}{s / \sqrt{n}}
+\end{align}
+```
+
+where
+
+- $\bar{x}$ is the sample mean
+- $\mu_{0}$ is the hypothesised population mean
+- $s$ is the sample standard deviation
+- $n$ is the sample size
+
+## Student's T-test: two sample 
+[*Tests if the population means for two different groups are equal or not.*]{style="color:#49a0c4"}
+
+. . .
+
+The test statistic is:
+
+```{=tex}
+\begin{align}
+t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+\end{align}
+```
+
+- $\bar{x}_1, \bar{x}_2$ are the sample means of groups 1 and 2
+- $n_1, n_2$ are the sample sizes of groups 1 and 2
+- $s_p$ is the pooled standard deviation:
+
+```{=tex}
+\begin{align}
+s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}
+\end{align}
+```
+
+with $s_1, s_2$ the sample standard deviations.
+
+## Student's T-test: paired 
+[*Tests if the difference between paired measurements for a population is zero or not - normally used with longitudinal data.*]{style="color:#49a0c4"} 
+
+. . .
+
+The test statistic is: 
+```{=tex}
+\begin{align}
+t = \frac{\bar{d}}{s_d / \sqrt{n}}
+\end{align}
+```
+
+where
+
+- $\bar{d}$ is the mean of the paired differences
+- $s_d$ is the standard deviation of the paired differences
+- $n$ is the number of pairs
 
 ## How many tails 
 
-Tests can be one-tailed or two-tailed. 
+Tests can be one-tailed or two-tailed. Determined when you define the hypothesis.
 
-![](L3_images/one-tailed-vs-two-tailed-test.jpg){.absolute top="170" left="30" width="700"}
+*One tailed:* if you only care is the mean is significant in one direction
+*Two tailed:* if you care about the mean being different regardless of bigger or smaller
 
-## T-test 
-Assumes the data is normally distributed. 
+<div style="text-align:center;">
+  <img src="L3_images/one_vs_two_tailed.png" alt="Normal distribution with one vs two tails." style="max-width:100%">
+</div>
 
-## T-test example 
 
-What is the probability of someone age 15 being a student on CASA007? 
+## Student's T-test: example 
 
-The probability is very small so we reject. 
+[*Research question*]{style="color:#49a0c4"}  
+Are male and female students similar heights?  
 
-## Regression T-tests
+[*Research hypothesis*]{style="color:#49a0c4"}  
+The mean height of female students is different to male students.  
+
+[H0:]{style="color:#49a0c4"}  
+The mean height of male and female students is the same  
+
+[H1:]{style="color:#49a0c4"}  
+The mean height of male and female students is different  
+ <br>
+
+Group 1 – female students  
+$\bar{x}_1 = 170$, $s_1 = 5$, $n_1$ = 95  
+
+Group 2 – male students  
+$\bar{x}_2 = 180$, $s_2 = 6$, $n_2$ = 103
+
+Two-tailed test with $\alpha=0.5$. 
+
+## Student's T-test: calculation
+
+**Student's T-test: two sample**
+
+Group 1 – female students  
+$\bar{x}_1 = 170$, $s_1 = 5$, $n_1$ = 95  
+
+Group 2 – male students  
+$\bar{x}_2 = 180$, $s_2 = 6$, $n_2$ = 103
+
+Substituting values:
+
+```{=tex}
+\begin{align}
+s_p &= \sqrt{\frac{(95-1)\cdot 5^2 + (103-1)\cdot 6^2}{95+103-2}} \approx 5.55
+\end{align}
+```
+
+Now compute $t$:
+
+```{=tex}
+\begin{align}
+t &= \frac{170 - 180}{5.55 \cdot \sqrt{\tfrac{1}{95} + \tfrac{1}{103}}} \approx -12.7
+\end{align}
+```
+
+## Student's T-test: determine outcome 
+
+Now we need to compare the test statistic to the **critical t-value**.  
+
+Degrees of freedom:  
+```{=tex}
+df = n_1 + n_2 - 2 = 95 + 103 - 2 = 196
+```
+In Python we can calculate the two-tailed critical t-value at $\alpha = 0.05$:
+
+```{python}
+#| echo: true
+#| output: true 
+from scipy.stats import t
+
+alpha = 0.05
+df = 196
+
+# two-tailed: split alpha
+t_crit = t.ppf(1 - alpha/2, df)
+print("Critical t-value:", t_crit.round(2))
+```
+
+Decision rule:
+
+If $|t| > 1.972$, reject $H_0$
+
+Our test statistic was $t \approx -12.7$ → $|-12.7| \gg 1.972$
+
+**Conclusion:**
+Reject $H_0$: male and female students have significantly different heights.
+
+<!-- ## Regression T-tests
 
 Is the gradient non-zero?
 
@@ -498,11 +762,8 @@ This indicates a correlation between the two variables.
 
 ...
 
-This will be covered further in lecture X on linear regression. 
+This will be covered further in lecture X on linear regression.  -->
 
-## Mean comparison t-test 
-
-Compares the mean of two distributions. 
 
 # Non-parametric tests 
 

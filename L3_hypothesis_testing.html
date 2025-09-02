@@ -31,6 +31,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="L3_hypothesis_testing_files/libs/revealjs/dist/theme/quarto-857e09779095bd51f2e5f66754695bab.css">
   <link href="L3_hypothesis_testing_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -166,7 +231,7 @@
 <h2>What is the likelihood of events occuring?</h2>
 <p><strong>Question</strong></p>
 <div class="fragment highlight-red">
-<p>What is the probability of someone at UCL being over 6ft?</p>
+<p>What is the probability of someone at UCL being over 190cm?</p>
 </div>
 <p><strong>How can we try to answer this?</strong></p>
 <p>Try to understand the distribution of heights.</p>
@@ -192,7 +257,15 @@
 </section>
 <section id="hypothesising" class="slide level2">
 <h2>Hypothesising</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div style="text-align:center;">
+<p><img src="L3_images/scientific_method.png" alt="The scientific method" style="max-width:100%"></p>
+</div>
+</div><div class="column" style="width:40%;">
+<p><br></p>
 <p>Research science is about coming up with hypotheses and evaluating them.</p>
+</div></div>
 <aside class="notes">
 <p>This lecture thinking about posing and answering reserach questions.</p>
 <p>I have this great idea - considering the data is this idea plausibly true?</p>
@@ -249,7 +322,7 @@
 <p><strong>Research question</strong></p>
 <p>A research question focuses on a specific problem.</p>
 <p><strong>Hypothesis</strong></p>
-<p>A statement that you will seek to confirm or disprove.</p>
+<p>A statement that you will seek to confirm or disprove the research question.</p>
 </section>
 <section id="flip-a-coin" class="slide level2">
 <h2>Flip a coin</h2>
@@ -342,15 +415,15 @@ The hypothesis is that it is a fair coin.
 </section>
 <section id="step-2" class="slide level2">
 <h2>Step 2</h2>
-<p><strong>Set your significance level 𝜶</strong></p>
+<p><strong>Set your significance level <span class="math inline">\(\alpha\)</span></strong></p>
 <p><span style="color:#49a0c4"><em>The significance level is the threshold below which you reject the null hypothesis.</em></span></p>
 <div>
 <ul>
 <li class="fragment">Decide what “too unlikely” means <strong>before you do the test</strong>.</li>
 <li class="fragment">Common choice is 5% significance
 <ul>
-<li class="fragment">𝜶 = 0.05</li>
-<li class="fragment">This means that if we see evidence that would have less than a 5% chance of occurring if the null hypothesis is true, then we reject the null hypothesis.</li>
+<li class="fragment"><span class="math inline">\(𝜶 = 0.05\)</span></li>
+<li class="fragment">This means that if we see evidence that would have less than a 5% chance of occurring under the null hypothesis, then we reject the null hypothesis.</li>
 </ul></li>
 </ul>
 </div>
@@ -358,9 +431,11 @@ The hypothesis is that it is a fair coin.
 <section id="step-3" class="slide level2">
 <h2>Step 3</h2>
 <p><strong>Identify the evidence</strong></p>
-<span class="math display">\[\begin{align}
+<!-- ```{=tex}
+\begin{align}
 f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-\end{align}\]</span>
+\end{align}
+``` -->
 <div>
 <ul>
 <li class="fragment">This could mean collecting the data</li>
@@ -397,12 +472,12 @@ f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><strong>Compare p-value with significance level</strong></p>
 <div>
 <ul>
-<li class="fragment">p-value &gt; 𝜶
+<li class="fragment">p-value &gt; <span class="math inline">\(\alpha\)</span>
 <ul>
 <li class="fragment">Evidence not that unlikely.</li>
 <li class="fragment">Not enough evidence to reject H0.</li>
 </ul></li>
-<li class="fragment">p-value ⩽ 𝜶
+<li class="fragment">p-value <span class="math inline">\(\leq \alpha\)</span>
 <ul>
 <li class="fragment">Evidence very unlikely.</li>
 <li class="fragment">Reject H0 and accept H1.</li>
@@ -437,13 +512,53 @@ f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><span style="color:#49a0c4"><em>The false null hypothesis is incorrectly accepted.</em></span></p>
 <p>This is caused by a <strong>false negative</strong>. The null hypothesis is false, but you get a false negative result, leading you to accepting the null hypothesis.</p>
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
+<section id="example-mammograms" class="slide level2">
+<h2>Example: Mammograms</h2>
+<div style="text-align: center;">
+<p><a href="L3_images/mammogram_van_woman.avif" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="L3_images/mammogram_van_woman.avif" width="700"></a></p>
+</div>
+<p>NHS offers breast cancer screening for all women between the ages of 50 and 70.</p>
+<aside class="notes">
+<p>The idea is to screen all women in the popualtion at high risk of brast cancer - in the hope they pick up results better.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-screening-outcomes" class="slide level2">
+<h2>Example: Screening outcomes</h2>
+<p><span style="color:#abc766"><strong>False positive</strong></span></p>
+<p>The null hypothesis is that the patient doesn’t have cancer. <span class="math inline">\(\approx\)</span> 10% of tests return a false positive. The test says they do have cancer even when they don’t.</p>
+<div class="fragment">
+<p><span style="color:#abc766"><strong>False negative</strong></span></p>
+<p>The null hypothesis is that the patient doesn’t have cancer. <span class="math inline">\(\approx\)</span> 20% of tests return a false negative. The test says they don’t have cancer but they do.</p>
+<aside class="notes">
+<p>False positive is bad as you might pursue a healthcare treatment which is unecessary.</p>
+<p>False negative - in healthcare this is the worst outcome - as goes undiagnosed and hence untreated.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="matrix-of-errors" class="slide level2">
 <h2>Matrix of errors</h2>
 <div style="text-align:center;">
-<p><img src="L3_images/error_matrix.png" alt="Error matrix" style="max-width:70%"></p>
+<p><img src="L3_images/error_matrix.png" alt="Error matrix" style="max-width:80%"></p>
 </div>
 </section></section>
 <section>
@@ -481,7 +596,7 @@ f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <p><span style="color:#49a0c4"><strong>Causation:</strong> <em>One variable influences the other variable to occur.</em></span></p>
 </div>
 <div class="fragment">
-<p>Lots of things can be correlated - but it doesn’t mean one event caused another.</p>
+<p>Lots of things can be correlated <strong>BUT</strong> it doesn’t mean one event caused another.</p>
 </div>
 </section>
 <section id="aliens-and-librarians" class="slide level2">
@@ -494,9 +609,15 @@ f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 </div>
 </section>
 <section id="correlation-is-not-causation" class="slide level2">
-<h2>Correlation IS NOT causation</h2>
+<h2>Correlation <strong>IS NOT</strong> causation</h2>
 <p>You might not know whether events are correlated, or causing each other.</p>
-<p>The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions</p>
+<div class="fragment">
+<p><br> <strong>BUT</strong></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p>The point of the hypothesis test is to test your idea – but use your contextual understanding to come up with plausible (and ethical) initial questions.</p>
+</div>
 </section>
 <section id="the-point-of-the-scientific-method" class="slide level2">
 <h2>The point of the scientific method</h2>
@@ -546,6 +667,22 @@ Aha! -->
 <h1>Example: cyclists in London</h1>
 <p>Is cycling in London less safe since the introduction of Lime bikes?</p>
 </section>
+<section id="example---context" class="slide level2">
+<h2>Example - context</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div style="text-align: center;">
+<p><a href="L3_images/timmy_bike.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="L3_images/timmy_bike.jpg" width="700"></a></p>
+</div>
+</div><div class="column" style="width:40%;">
+<div>
+<ul>
+<li class="fragment">UK gov reports cycling fatalities per year</li>
+<li class="fragment">Lime bikes introduced to the UK in 2021</li>
+</ul>
+</div>
+</div></div>
+</section>
 <section id="example---step-1" class="slide level2">
 <h2>Example - step 1</h2>
 <p><strong>Define the null and alternative hypothesis</strong></p>
@@ -555,12 +692,13 @@ Aha! -->
 <section id="example---step-2" class="slide level2">
 <h2>Example - step 2</h2>
 <p><strong>Set your significance level</strong></p>
-<p>𝜶 = 0.05</p>
+<p><span class="math inline">\(\alpha = 0.05\)</span></p>
 </section>
 <section id="example---step-3" class="slide level2">
 <h2>Example - step 3</h2>
 <p><strong>Identify the evidence</strong></p>
 <p>Dataset:</p>
+<p>NEED TO DO THIS!!</p>
 </section>
 <section id="example---step-4" class="slide level2">
 <h2>Example - step 4</h2>
@@ -580,43 +718,184 @@ Aha! -->
 <p><strong>Parametric Tests</strong></p>
 <ul>
 <li>Evaluate hypothesis for specific parameters</li>
-<li>Typically have assumptions about the distribution - e.g.&nbsp;assumed normal distribution</li>
+<li>Typically have assumptions about the distribution
+<ul>
+<li>e.g.&nbsp;assumed normal distribution</li>
+</ul></li>
+<li>Continuous data</li>
 </ul>
+<div class="fragment">
 <p><strong>Non-parametric Tests</strong></p>
 <ul>
-<li>Evaluate hypotheis for entire population distirbution</li>
-<li>Typcially less assumptions on the ditribution</li>
+<li>Evaluate hypothesis for entire population distribution</li>
+<li>Typcially less assumptions on the distribution</li>
+<li>Continuous or discrete data</li>
 </ul>
+</div>
 </section></section>
 <section>
 <section id="parametric-tests" class="title-slide slide level1 center">
 <h1>Parametric tests</h1>
 
 </section>
+<section id="students-t-test" class="slide level2">
+<h2>Student’s T-test</h2>
+<p><span style="color:#49a0c4"><em>Student’s T-test is used to compare the mean of a dataset.</em></span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment">parametric statistical test</li>
+<li class="fragment">assumes the data is normally distributed</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="text-align:center;">
+<img src="L3_images/William_Sealy_Gosset.jpg" alt="A photograph of William Sealy Gosset" style="max-width:80%;">
+<div style="font-size:0.8em; color: #555; margin-top:4px;">
+<pre><code>This is William Sealy Gosset - he was **not** a student.
+Image credit: https://en.wikipedia.org/wiki/William_Sealy_Gosset#/media/File:William_Sealy_Gosset.jpg</code></pre>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>William Gosset was working for Guinness brewing company when he came up with the t-test - but his company wanted his to publish under a pseudonym - hence ‘student’</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="students-t-test-one-sample" class="slide level2">
+<h2>Student’s T-test: one sample</h2>
+<p><span style="color:#49a0c4"><em>Tests whether the population mean is equal to a specific value or not</em></span></p>
+<div class="fragment">
+<p>The test statistic is calculated as:</p>
+<span class="math display">\[\begin{align}
+t = \frac{\bar{x} - \mu_{0}}{s / \sqrt{n}}
+\end{align}\]</span>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\bar{x}\)</span> is the sample mean</li>
+<li><span class="math inline">\(\mu_{0}\)</span> is the hypothesised population mean</li>
+<li><span class="math inline">\(s\)</span> is the sample standard deviation</li>
+<li><span class="math inline">\(n\)</span> is the sample size</li>
+</ul>
+</div>
+</section>
+<section id="students-t-test-two-sample" class="slide level2">
+<h2>Student’s T-test: two sample</h2>
+<p><span style="color:#49a0c4"><em>Tests if the population means for two different groups are equal or not.</em></span></p>
+<div class="fragment">
+<p>The test statistic is:</p>
+<span class="math display">\[\begin{align}
+t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+\end{align}\]</span>
+<ul>
+<li><span class="math inline">\(\bar{x}_1, \bar{x}_2\)</span> are the sample means of groups 1 and 2</li>
+<li><span class="math inline">\(n_1, n_2\)</span> are the sample sizes of groups 1 and 2</li>
+<li><span class="math inline">\(s_p\)</span> is the pooled standard deviation:</li>
+</ul>
+<span class="math display">\[\begin{align}
+s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}
+\end{align}\]</span>
+<p>with <span class="math inline">\(s_1, s_2\)</span> the sample standard deviations.</p>
+</div>
+</section>
+<section id="students-t-test-paired" class="slide level2">
+<h2>Student’s T-test: paired</h2>
+<p><span style="color:#49a0c4"><em>Tests if the difference between paired measurements for a population is zero or not - normally used with longitudinal data.</em></span></p>
+<div class="fragment">
+<p>The test statistic is:</p>
+<span class="math display">\[\begin{align}
+t = \frac{\bar{d}}{s_d / \sqrt{n}}
+\end{align}\]</span>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\bar{d}\)</span> is the mean of the paired differences</li>
+<li><span class="math inline">\(s_d\)</span> is the standard deviation of the paired differences</li>
+<li><span class="math inline">\(n\)</span> is the number of pairs</li>
+</ul>
+</div>
+</section>
 <section id="how-many-tails" class="slide level2">
 <h2>How many tails</h2>
-<p>Tests can be one-tailed or two-tailed.</p>
-<p><a href="L3_images/one-tailed-vs-two-tailed-test.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="L3_images/one-tailed-vs-two-tailed-test.jpg" class="absolute" style="top: 170px; left: 30px; width: 700px; "></a></p>
+<p>Tests can be one-tailed or two-tailed. Determined when you define the hypothesis.</p>
+<p><em>One tailed:</em> if you only care is the mean is significant in one direction <em>Two tailed:</em> if you care about the mean being different regardless of bigger or smaller</p>
+<div style="text-align:center;">
+<p><img src="L3_images/one_vs_two_tailed.png" alt="Normal distribution with one vs two tails." style="max-width:100%"></p>
+</div>
 </section>
-<section id="t-test" class="slide level2">
-<h2>T-test</h2>
-<p>Assumes the data is normally distributed.</p>
+<section id="students-t-test-example" class="slide level2">
+<h2>Student’s T-test: example</h2>
+<p><span style="color:#49a0c4"><em>Research question</em></span><br>
+Are male and female students similar heights?</p>
+<p><span style="color:#49a0c4"><em>Research hypothesis</em></span><br>
+The mean height of female students is different to male students.</p>
+<p><span style="color:#49a0c4">H0:</span><br>
+The mean height of male and female students is the same</p>
+<p><span style="color:#49a0c4">H1:</span><br>
+The mean height of male and female students is different<br>
+<br></p>
+<p>Group 1 – female students<br>
+<span class="math inline">\(\bar{x}_1 = 170\)</span>, <span class="math inline">\(s_1 = 5\)</span>, <span class="math inline">\(n_1\)</span> = 95</p>
+<p>Group 2 – male students<br>
+<span class="math inline">\(\bar{x}_2 = 180\)</span>, <span class="math inline">\(s_2 = 6\)</span>, <span class="math inline">\(n_2\)</span> = 103</p>
+<p>Two-tailed test with <span class="math inline">\(\alpha=0.5\)</span>.</p>
 </section>
-<section id="t-test-example" class="slide level2">
-<h2>T-test example</h2>
-<p>What is the probability of someone age 15 being a student on CASA007?</p>
-<p>The probability is very small so we reject.</p>
+<section id="students-t-test-calculation" class="slide level2">
+<h2>Student’s T-test: calculation</h2>
+<p><strong>Student’s T-test: two sample</strong></p>
+<p>Group 1 – female students<br>
+<span class="math inline">\(\bar{x}_1 = 170\)</span>, <span class="math inline">\(s_1 = 5\)</span>, <span class="math inline">\(n_1\)</span> = 95</p>
+<p>Group 2 – male students<br>
+<span class="math inline">\(\bar{x}_2 = 180\)</span>, <span class="math inline">\(s_2 = 6\)</span>, <span class="math inline">\(n_2\)</span> = 103</p>
+<p>Substituting values:</p>
+<span class="math display">\[\begin{align}
+s_p &amp;= \sqrt{\frac{(95-1)\cdot 5^2 + (103-1)\cdot 6^2}{95+103-2}} \approx 5.55
+\end{align}\]</span>
+<p>Now compute <span class="math inline">\(t\)</span>:</p>
+<span class="math display">\[\begin{align}
+t &amp;= \frac{170 - 180}{5.55 \cdot \sqrt{\tfrac{1}{95} + \tfrac{1}{103}}} \approx -12.7
+\end{align}\]</span>
 </section>
-<section id="regression-t-tests" class="slide level2">
-<h2>Regression T-tests</h2>
-<p>Is the gradient non-zero?</p>
-<p>This indicates a correlation between the two variables.</p>
-<p>…</p>
-<p>This will be covered further in lecture X on linear regression.</p>
-</section>
-<section id="mean-comparison-t-test" class="slide level2">
-<h2>Mean comparison t-test</h2>
-<p>Compares the mean of two distributions.</p>
+<section id="students-t-test-determine-outcome" class="slide level2">
+<h2>Student’s T-test: determine outcome</h2>
+<p>Now we need to compare the test statistic to the <strong>critical t-value</strong>.</p>
+<p>Degrees of freedom:</p>
+<p>In Python we can calculate the two-tailed critical t-value at <span class="math inline">\(\alpha = 0.05\)</span>:</p>
+<div id="166b4643" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a>alpha <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb3-4"><a href=""></a>df <span class="op">=</span> <span class="dv">196</span></span>
+<span id="cb3-5"><a href=""></a></span>
+<span id="cb3-6"><a href=""></a><span class="co"># two-tailed: split alpha</span></span>
+<span id="cb3-7"><a href=""></a>t_crit <span class="op">=</span> t.ppf(<span class="dv">1</span> <span class="op">-</span> alpha<span class="op">/</span><span class="dv">2</span>, df)</span>
+<span id="cb3-8"><a href=""></a><span class="bu">print</span>(<span class="st">"Critical t-value:"</span>, t_crit.<span class="bu">round</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Critical t-value: 1.97</code></pre>
+</div>
+</div>
+<p>Decision rule:</p>
+<p>If <span class="math inline">\(|t| &gt; 1.972\)</span>, reject <span class="math inline">\(H_0\)</span></p>
+<p>Our test statistic was <span class="math inline">\(t \approx -12.7\)</span> → <span class="math inline">\(|-12.7| \gg 1.972\)</span></p>
+<p><strong>Conclusion:</strong> Reject <span class="math inline">\(H_0\)</span>: male and female students have significantly different heights.</p>
+<!-- ## Regression T-tests
+
+Is the gradient non-zero?
+
+This indicates a correlation between the two variables. 
+
+...
+
+This will be covered further in lecture X on linear regression.  -->
 </section></section>
 <section>
 <section id="non-parametric-tests" class="title-slide slide level1 center">

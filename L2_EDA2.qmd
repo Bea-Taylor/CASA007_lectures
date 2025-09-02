@@ -38,10 +38,29 @@ Need to fill this in.
 
 ## First things first
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<div style="text-align:center;">
+  <img src="L3_images/scientific_method.png" alt="The scientific method" style="max-width:100%">
+</div>
+
+
+:::
+
+::: {.column width="40%"}
+
+<br>
+
 Exploratory data analysis is the first step of any data science project. 
 
+:::
+
+::::
+
 ::: {.notes}
-link to scientific process and how we iterate over ideas and concepts 
+link to scientific process and how we test and then iterate over ideas and concepts. Something we will talk about more next lecture. 
 :::
 
 ## Introducing statistical concepts 
@@ -68,7 +87,7 @@ By the end of this lecture you should be able to:
 
 **Question**
 
-What is the probability of someone at UCL being over 6ft?
+What is the probability of someone at UCL being over 190cm? 
 
 . . . 
 
@@ -77,7 +96,7 @@ What is the probability of someone at UCL being over 6ft?
 . . .
 
 ::: {.fragment .strike}
-We could try and find someone on campus who is over 6ft. 
+We could try and find someone on campus who is over 190cm. 
 :::
 
 . . .
@@ -94,9 +113,11 @@ Next week, thinking about formulating and answering the research question.
 # Random Sampling 
 
 ## The dream vs reality 
-Ideally, we would like all the relevant data. 
+Ideally, we would like all the relevant data.
 
-In reality we normally only have some. 
+. . .
+
+... in reality we normally only have some. 
 
 <div style="text-align:center;">
   <img src="L2_images/stickfigures.gif" alt="Random Sampling" style="max-width:80%;">
@@ -144,10 +165,12 @@ We all have cognitive biases.
 
 These can impact our research:
 
+::: {.incremental}
 - data collection 
 - data selection 
 - data processing 
 - modelling choices
+:::
 
 :::
 
@@ -174,13 +197,16 @@ This can lead to incorrect conclusions.
 
 ## Types of bias 
 
+- Research bias
+  - Cognitive bias 
+
 - Dataset bias 
   - Historical bias 
   - Selection bias 
 
-- Research bias
-  - Cognitive bias 
-
+::: {.notes}
+Already talked about the idea of cognitive bias. There are lots and lots of different types of biases - going to talk a little about different ways they can bias the dataset. 
+:::
 
 ## Historical bias
 [*Reflects existing, real world, inequalities*]{style="color:#49a0c4"} 
@@ -194,6 +220,12 @@ Examples:
   - Tools to help sentencing of 'criminals'. 
   - Patterns in the dataset --- judges are less lenient before lunch. 
 
+::: {.notes}
+Police profiling models - meant to make easy to spot criminals - but use exisitng crime data - which reflect racist prejudices in society - and the model learns to pick out people of certain ethnic backgrounds. 
+
+Tools also used to help the sentnecing of criminals in courts of law - observe the hungry judges effect, where they sentnece differently based on how hungry they are - tend to be harsher just before lunch and more lenient after lunch. 
+:::
+
 ## Selection bias 
 [*When the sample chosen doesn’t represent the whole population of interest*]{style="color:#49a0c4"} 
 
@@ -206,6 +238,8 @@ Examples:
   - Reflects a very small proportion of global population. 
 
 ::: {.notes}
+Roy model - example from economics - basically there's not a random selection of people in a specific job - thye have chosen that job based on underlying unobserved characterisitcs. For example suppose I'm interested in wages of workers in different occupations - but they have self-selected into that occupation based on their unique skill set - so it's a biased representation. 
+
 WEIRD = western, educated, industrialised, rich, democratic
 :::
 
@@ -242,6 +276,41 @@ Even when we think we have really good data, someone has made the choice to coll
 - Range 
 
 ## Example 
+::: columns
+
+::: column
+
+Let's look at a dataset of students height. 
+
+<br>
+
+Easy to print the summary statistics in Python, using `pandas`: 
+
+```{python}
+#| echo: true
+#| output: false   # show code only here
+import pandas as pd 
+
+height_df = pd.read_csv("L2_data/heights.csv")
+height_df.describe().round(2)
+```
+:::
+
+::: column
+
+
+```{python}
+#| echo: false     # hide code
+#| output: true    # show only output
+import pandas as pd 
+
+height_df = pd.read_csv("L2_data/heights.csv")
+height_df.describe().round(2)
+```
+
+:::
+:::
+
 
 
 ## Same same but different 
@@ -309,7 +378,7 @@ The most fundamental distribution
   <img src="L2_images/normal_distribution_pdf.png" alt="Normal distribution with annotated probability density function" style="max-width:90%">
 </div>
 
-[*The probability density function (PDF) describes the likelihood of different outcomes for a random variable*]{style="color:#49a0c4"} 
+[*The probability density function (PDF) describes the likelihood of different outcomes for a continuous random variable*]{style="color:#49a0c4"} 
 
 <!-- The PDF of the normal distribution is: 
 ```{=tex}
@@ -328,19 +397,49 @@ The most fundamental distribution
 
 ## Sampling distributions 
 
-Note importance of sampling distributions. 
+[The distribution of the random variable when derived from a random sample of size $n$]{style="color:#49a0c4"} 
 
-In the case of the normal distribution: Std represented by σ vs std represented by σ/√n
+. . .
+
+In the case of the normal distribution - standard deviation becomes: 
+
+```{=tex}
+\begin{align}
+\frac{\sigma}{\sqrt{n}}
+\end{align}
+```
 
 ## Calculating probabilities 
 
 Can use the PDF to evaluate the probability at a specific point. 
 
-Generally want the probability that $x>p$ or $x<=p$. 
+```{=tex}
+\begin{align}
+x \sim N(0,1)
+\end{align}
+```
 
-Area under the curve.
+. . .
 
-## Example: distance to school 
+```{=tex}
+\begin{align}
+p(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{align}
+```
+
+. . . 
+
+```{=tex}
+\begin{align}
+p(x=0.5) = \frac{1}{\sqrt{2 \pi \times 1^2}} e^{-\frac{(0.5-0)^2}{(2\times 1)^2}}
+\\
+= \frac{1}{\sqrt{2 \pi}} e^{-\frac{0.25}{4}} = 0.3747
+\end{align}
+```
+
+<!-- Generally want the probability that $x>p$ or $x<=p$. 
+
+Area under the curve. -->
 
 ## Not everything is normal 
 Many real world datasets are *approximately* normally distributed.
@@ -351,12 +450,24 @@ But not all ---  might not have a characteristic size, or not continuous, or not
 
 # More generally, what is a probability distribution? 
 
-## Continous vs. Discrete 
+## Continuous vs. Discrete 
 **Continuous data** 
+Measurable data which can take any value within a given range.  
+
+[*example*: height]{style="color:#abc766"}
 
 **Discrete data**
+Measurable data which can take seperate, countable values. 
 
-## Back to the probability density function 
+[*example*: shoe size]{style="color:#abc766"} 
+
+::: {.notes}
+Suppose I have someone who is x cm tall, and someone who is y cm tall, I can find someone in between whose x.5cm tall. 
+
+But shoe sizes are discrete (not the length of your foot). 
+:::
+
+## Back to the probability function 
 
 ```{=tex}
 \begin{align}
@@ -364,12 +475,17 @@ p(x)
 \end{align}
 ```
 
-The PDF allows us to evaluate the probability of events, and hence evaluate hypotheses. 
+Having a function for the distribution allows us to evaluate the probability of events, and hence evaluate hypotheses. 
 
+. . .
 
+For discrete distributions we have the probability mass function. 
 
-## Sampling distributions 
-Specific for different probability distributions (/n)
+. . .
+
+**Sampling distributions**
+
+As for the normal distribution, in the general case we should be aware of the sampling distribution. 
 
 # Binomial distribution 
 
@@ -378,6 +494,12 @@ Specific for different probability distributions (/n)
 :::: {.columns}
 
 ::: {.column width="50%"}
+
+**Discrete outcomes**
+
+Describes the frequency of successes in a test with 2 outcomes 
+
+<br>
 
 ::: {.incremental}
 - I flip a coin 10 times
@@ -392,7 +514,7 @@ Specific for different probability distributions (/n)
 <br>
 
 <div style="text-align:center;">
-  <img src="L2_images/coin_flip.jpg" alt="Human Brain" style="max-width:70%">
+  <img src="L2_images/coin_flip.jpg" alt="A hand flipping a coin." style="max-width:70%">
 </div>
 
 :::
@@ -400,11 +522,39 @@ Specific for different probability distributions (/n)
 ::::
 
 
+## Probability mass function 
 
-## Discrete outcomes 
+```{=tex}
+\begin{align}
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+\end{align}
+```
 
-- Describes the frequency of successes in a test with 2 outcomes 
+Where $n$ is the number of trials, and $p$ is the probability of success for each trial. 
 
+<br>
+
+[*The probability mass function (PMF) describes the likelihood of different outcomes for a discrete random variable*]{style="color:#49a0c4"} 
+
+## Example 
+
+::: {.incremental}
+- I flip a coin 10 times 
+  - **$n=10$, $p=0.5$**
+- How often can I expect to get at least 7 heads? 
+  - **$k=7$**
+:::
+
+. . . 
+
+Evaluating the PMF, we get: 
+
+```{=tex}
+\begin{align}
+P(X = 7) = \binom{10}{7} 0.5^7 (1-0.5)^{10-7}
+\\ = 0.1172
+\end{align}
+```
 
 # Poisson distribution 
 
@@ -439,12 +589,37 @@ Specific for different probability distributions (/n)
 - Imagine a situation where certain rare events (like arrival of mail) can occur in an **independent** fashion. 
 - The Poisson distribution estimates how many such events are expected within a time interval
 - Fixed interval (e.g. one minute)
-- Fixed rate of events (λ) (e.g. 4 cars per minute, λ = 4)
+- Fixed rate of events ($\lambda$) (e.g. 4 cars per minute, $\lambda=4$)
 -	Events occur independently.
--	Poisson Distribution gives the probability of k events.
+-	Poisson Distribution gives the probability of $k$ events.
 :::
 
-## Probability density function 
+## Probability mass function 
+
+```{=tex}
+\begin{align}
+P(X = k) = \frac{\lambda^k e^{- \lambda}}{k!}
+\end{align}
+```
+
+Where $\lambda$ is the expected number of events in a given interval.
+
+## Example 
+
+::: {.incremental}
+- Between 1883 and 1893 there were an average of 2 deaths from horse kicks a year. 
+  - **$\lambda=2$**
+- What's the probability of seeing 10 deaths from horse kicks in 1894? 
+::: 
+
+. . .
+
+```{=tex}
+\begin{align}
+P(X = 10) = \frac{2^10 e^{-2}}{10!}
+\\ = 0.000038
+\end{align}
+```
 
 # Exponentials and Logarithms 
 
@@ -613,7 +788,7 @@ y=e^x
 \end{align}
 ```
 
-e here is eulers number - a mathematical constant. 
+$e$ here is eulers number - a mathematical constant. 
 ```{=tex}
 \begin{align}
 e \approx 2.718... 
@@ -737,7 +912,7 @@ We've covered:
 
 
 # Practical 
-Practical will focus on plotting and generating sumamry statistics for data following a range of probability distributions. 
+Practical will focus on plotting and generating summary statistics for data following a range of probability distributions. 
 
 . . .
 
