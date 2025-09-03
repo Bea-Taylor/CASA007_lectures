@@ -37,17 +37,17 @@ Looked at hypothesis testing:
 
 # This week 
 
-## Back to the maths
+## Back to the start
 
 Maths underpins quantitative methods
 
 ::: {.incremental}
-- Quantitative methods includes data analysis and machine learning 
+- quantitative methods includes data analysis and machine learning 
 - focused on algorithms and methodologies 
 - **AND** practical examples of how these can be applied 
 :::
 
-## Key concepts 
+## Maths underpins it 
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -56,7 +56,7 @@ Maths underpins quantitative methods
   <img 
     src="https://imgs.xkcd.com/comics/machine_learning.png" 
     alt="XKCD - Machine Learning" 
-    style="width:500px">
+    style="width:450px">
   <div style="font-size:0.8em; color: #555; margin-top:4px;">
     Image credit: [xkcd](https://xkcd.com/1838/)
   </div>
@@ -89,7 +89,7 @@ Not expecting students to be experts!
 ## Learning Objectives
 By the end of this lecture you should:
 
-1. Define concepts of linear maps, injections, bijections and surjections. 
+1. Define concept of linear maps. 
 2. Compute linear algebra equations using vectors and matrices.  
 3. Describe how linear algebra relates to solving linear regression. 
 
@@ -98,17 +98,6 @@ By the end of this lecture you should:
 ## What does it mean?
 
 The goal is to understand equations like this: 
-
-```{=tex}
-\begin{align}
-y = \sum_{i=1}^n \beta_i x_i
-\end{align}
-```
-
-. . . 
-
-
-or like: (need another example here)
 
 ```{=tex}
 \begin{align}
@@ -137,28 +126,6 @@ This is an equation for a geographically weighted regression model.
 
 # Basics 
 
-## Mathematical notation 
-Going to be using some mathematical notation 
-
-- as this is what’s used in papers!
-
-. . .
-
-Formal way of writing maths. 
-
-::: {.notes}
-Provides a universal way of writing and understanding maths. 
-:::
-
-## Cheat sheet 
-
-Mathematical notation cheat sheet: https://www.upyesp.org/posts/makrdown-vscode-math-notation/
-
-<div style="text-align:center;">
-  <img src="L4_images/cheat_sheet_QR_code.png" alt="QR code for maths cheat sheet." style="max-width:35%">
-</div>
-
-
 ## Mathematical models 
 
 ::: {.incremental}
@@ -166,7 +133,7 @@ Mathematical notation cheat sheet: https://www.upyesp.org/posts/makrdown-vscode-
 - In a regression setting the model describes a function that maps input to real-valued outputs 
 - We can use mathematical models to validate our hypotheses/research questions 
   - How does the number of bedrooms affect house price? 
-  - The relationship between time spent studying and students grades? 
+  - What's the relationship between time spent studying and student's grades? 
 :::
 
 ::: {.notes}
@@ -184,6 +151,115 @@ Lots of different definitions of machine learning - but this us a simple one.
 
 In later weeks of the course we will look at machine learning concepts. 
 :::
+
+# Notation 
+
+## Mathematical notation 
+Going to be using some mathematical notation 
+
+- as this is what’s used in papers!
+
+. . .
+
+It's just a formal way of writing maths. 
+
+::: {.notes}
+Provides a universal way of writing and understanding maths. 
+:::
+
+## Cheat sheet 
+
+Mathematical notation cheat sheet: https://www.upyesp.org/posts/makrdown-vscode-math-notation/
+
+<div style="text-align:center;">
+  <img src="L4_images/cheat_sheet_QR_code.png" alt="QR code for maths cheat sheet." style="max-width:35%">
+</div>
+
+## Letters for numbers 
+
+::: {.incremental}
+- $a, b, c$ represent **constants**  
+- $x, y, z, \dots$ represent **variables**  
+- $f, g, h, \dots$ represent **functions**  
+- $i, j, \dots$ often used for **indices** (i.e. counting)  
+- $a_i$ means the $i$-th element of a sequence  
+:::
+
+## Numbers replaced by letters 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+The power to represent any number!
+:::
+
+::: {.column width="60%"}
+<div style="text-align:center;">
+  <img src="L4_images/keanu_xy.jpg" alt="Keanu likes random variables." style="max-width:90%">
+</div>
+:::
+
+::::
+
+## Sums 
+
+[**Summation notation** is a compact way to write repeated addition.]{style="color:#49a0c4"} 
+
+```{=tex}
+\begin{align}
+\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \dots + a_n
+\end{align}
+```
+
+. . .
+
+*Example:*
+
+```{=tex}
+\begin{align}
+\sum_{i=1}^5 i = 1+2+3+4+5 = 15
+\end{align}
+```
+
+## Product
+
+[**Product notation** is a compact way to write repeated multiplication.]{style="color:#49a0c4"} 
+
+```{=tex}
+\begin{align}
+\prod_{i=1}^n a_i = a_1 \cdot a_2 \cdot a_3 \cdot \dots \cdot a_n
+\end{align}
+```
+
+. . .
+
+*Example:*
+
+```{=tex}
+\begin{align}
+\prod_{i=1}^4 i = 1 \cdot 2 \cdot 3 \cdot 4 = 24
+\end{align}
+```
+
+## a little bit of epsilon
+
+[$\epsilon$ is used to mean a small, but arbitrary, number.]{style="color:#49a0c4"} 
+
+. . .
+
+<br>
+
+*Example:*
+
+```{=tex}
+\begin{align}
+y = 2x + \epsilon
+\end{align}
+```
+
+. . .
+
+This means $y$ is equal to $2$ times $x$ plus a small value. So if $x=3$, then we would expect $y$ to be close to $6$, but not exactly $6$. 
 
 # Functions 
 
@@ -211,13 +287,23 @@ f(x) = y \text{ for } x \in X, y \in Y
 ```
 
 ## Domain and range 
-[***Domain** - the numbers mapped from*]{style="color:#49a0c4"} 
+[***Domain** - the set of all possible input numbers for the function*]{style="color:#49a0c4"} 
 
-[***Range**: the numbers mapped to*]{style="color:#49a0c4"}  
+*Example:*
+
+In $f(x)=y$, $x$ is the domain.
 
 . . .
 
-In the applied sciences the domain and range are typically $\mathbb N$, $\mathbb Z$, $\mathbb R$
+[***Range**: the set of all possible output numbers from the function*]{style="color:#49a0c4"}  
+
+*Example:*
+
+In $f(x)=y$, $y$ is the range.
+
+## Number systems 
+
+In the applied sciences the domain and range are typically $\mathbb N$ or  $\mathbb Z$ or $\mathbb R$
 
 . . .
 
@@ -300,14 +386,16 @@ f(x) = ax + b
 
 . . .
 
-Graphically this is a straight line. 
-
-. . .
-
 <div style="background-color:#2e6260; color:white; padding:8px; border-radius:5px; margin-top:10px;"> 
 <em>"linea"</em> is the latin word for line or string. </div>
 
-Add a plot of a linear line here.  
+## Straight lines 
+
+Graphically linear equations are straight lines. 
+
+<div style="text-align:center;">
+  <img src="L4_images/linear_function.png" alt="Linear equation" style="max-width:75%">
+</div>
 
 ## Linear equation(s)
 
@@ -430,7 +518,24 @@ The generalised matrix form (for a 4x4 matrix is):
 
 ## Along the corridor, down the stairs 
 
+:::: {.columns}
+
+::: {.column width="40%"}
+
 Matrices are indexed by row ($m$) and by column ($n$). 
+
+:::
+
+::: {.column width="60%"}
+
+<div style="text-align:center;">
+  <img src="L4_images/matrix_elements.png" alt="Linear equation" style="max-width:100%">
+</div>
+
+:::
+
+::::
+
 
 ## Example 
 
@@ -460,27 +565,290 @@ $m=3$, $n=2$ matrix:
 
 ## Matrix addition 
 
+We denote matrices by capital letters: $A$, $B$, ... 
+
+. . .
+
+Matrix addition is element-wise: 
+
 ```{=tex}
 \begin{align}
-\begin{bmatrix}1&1\cr1&4\end{bmatrix} + \begin{bmatrix}1&0\cr2&6\end{bmatrix} = \begin{bmatrix}2&1\cr3&10\end{bmatrix}
+(A+B)_{ij} = A_{ij} + B_{ij}
 \end{align}
 ```
 
-We denote matrices by capital letters: $A$, $B$, ... :
+. . .
+
+*Example:*
+
+```{=tex}
+\begin{align}
+\begin{bmatrix}1&1\cr1&4\end{bmatrix} + 
+\begin{bmatrix}1&0\cr2&6\end{bmatrix} =
+\begin{bmatrix}2&1\cr3&10\end{bmatrix}
+\end{align}
+```
+
+## Matrix multiplication
+
+Matrix multiplication is row by column.
+
+```{=tex}
+\begin{align}
+(AB){ij} = \sum{k} A_{ik} B_{kj}
+\end{align}
+```
+
+. . .
+
+*Example:*
+
+```{=tex}
+\begin{align}
+\begin{bmatrix}1 & 2\cr 3 & 4\end{bmatrix}
+\begin{bmatrix}5 & 6\cr 7 & 8\end{bmatrix}
+= 
+\begin{bmatrix}
+1\cdot 5 + 2\cdot 7 & 1\cdot 6 + 2\cdot 8 \cr
+3\cdot 5 + 4\cdot 7 & 3\cdot 6 + 4\cdot 8
+\end{bmatrix}
+=
+\begin{bmatrix}
+19 & 22 \cr 43 & 50
+\end{bmatrix}
+\end{align}
+```
+
+## Identity matrix
+
+The identity matrix $I$ acts like the number $1$ in multiplication. 
+
+For any compatible matrix $A$:
+
+```{=tex}
+\begin{align}
+AI = IA = A
+\end{align}
+```
+
+. . .
+
+*Example:*
+
+```{=tex}
+\begin{align}
+I = \begin{bmatrix}
+1 & 0 & 0 \cr
+0 & 1 & 0 \cr
+0 & 0 & 1
+\end{bmatrix}
+\end{align}
+```
+## Determinant of a matrix
+
+The determinant of a square matrix $A$ is a scalar value that gives information about:
+
+- Whether $A$ is invertible  
+- How $A$ scales space (volume/area)  
+- Orientation (positive or negative)  
+
+We write this as $\det(A)$ or $|A|$.
+
+## Determinant of a 2×2 matrix
+
+For 
+```{=tex}
+\begin{align}
+A = \begin{bmatrix}
+a & b \cr
+c & d
+\end{bmatrix}
+\end{align}
+```
+the determinant is:
+
+```{=tex}
+\begin{align}
+\det(A) = ad - bc
+\end{align}
+```
 
 
-## Matrix multiplication 
+. . .
 
-## Identity matrix 
+*Example:*
+
+```{=tex}
+Copy code
+\begin{align}
+\begin{vmatrix}
+1 & 2 \cr
+3 & 4
+\end{vmatrix}
+= (1)(4) - (2)(3) = -2
+\end{align}
+```
 
 ## Inverse matrix 
 
-# Solving systems of equations 
+The inverse of a square matrix $A$ is denoted $A^{-1}$ and satisfies:
 
-## Writing in matrix form 
+```{=tex}
+\begin{align}
+AA^{-1} = A^{-1}A = I
+\end{align}
+```
 
-## Simplifying 
+## Inverse matrix (2x2)
 
+For a $2 \times 2$ matrix A:
+```{=tex}
+\begin{align}
+A = \begin{bmatrix}
+a & b \cr
+c & d
+\end{bmatrix}
+\end{align}
+```
+
+if $\det(A) \neq 0$, then the inverse is:
+
+```{=tex}
+\begin{align}
+A^{-1} = \frac{1}{\det(A)}
+\begin{bmatrix}
+d & -b \cr
+-c & a
+\end{bmatrix},
+\quad \text{where } \det(A) = ad - bc
+\end{align}
+```
+
+If $\det(A) = 0$, the matrix has no inverse.
+
+<!-- ## Example 
+
+*Example:*
+
+For a 2x2 matrix A:
+
+```{=tex}
+\begin{align}
+A = \begin{bmatrix}1 & 2 \cr 3 & 4\end{bmatrix}, \quad
+A^{-1} = \frac{1}{(1)(4)-(2)(3)}
+\begin{bmatrix}4 & -2 \cr -3 & 1\end{bmatrix}
+= \begin{bmatrix}-2 & 1 \cr 1.5 & -0.5\end{bmatrix}
+\end{align}
+``` -->
+
+## System of equations
+
+Recall that a system of linear equations can be written compactly as:  
+
+```{=tex}
+\begin{align}
+Ax = y
+\end{align}
+```
+
+where: 
+- $A$ is the coefficient matrix
+- $x$ is the vector of unknowns
+- $y$ is the vector of constants
+
+## Solving the system 
+
+If $A$ is invertible (i.e. $\det(A) \neq 0$), we can solve for $x$:
+
+```{=tex}
+\begin{align}
+Ax &= y \\
+A^{-1}Ax &= A^{-1}y \\
+Ix &= A^{-1}y \\
+x &= A^{-1}y
+\end{align}
+```
+
+. . .
+
+Thus, the solution exists and is unique whenever $A$ has an inverse. 
+
+# Maths to English 
+
+## So whats does it mean? 
+
+<div style="text-align:center;">
+  <img src="L4_images/GWR_equation.png" alt="Geographically weighted regression equation." style="width:900px">
+    <div style="font-size:0.8em; color: #555; margin-top:4px;">
+    Taken from: Chiou, Jou, & Yang, (2015). Factors affecting public transportation usage rate: Geographically weighted regression. Transportation Research Part A: Policy and Practice.
+  </div>
+</div>
+
+## Take another look 
+
+Link to the paper...
+
+## Writing the equation 
+
+Equation 1:
+```{=tex}
+\begin{align}
+y_i = \beta_0(u_i, v_i) + \sum_{k=1}^p \beta_{ik}(u_i, v_i)x_{ik} + \epsilon_i
+\end{align}
+```
+
+Equation 2:
+```{=tex}
+\begin{align}
+\hat{\beta}(i) = [X^TW(i)X]^{-1}X^TW(i)Y
+\end{align}
+```
+
+## Translating equation 1 
+
+```{=tex}
+\begin{align}
+y_i = \beta_0(u_i, v_i) + \sum_{k=1}^p \beta_{ik}(u_i, v_i)x_{ik} + \epsilon_i
+\end{align}
+```
+
+where: 
+- $y_i$: the outcome (response) for observation $i$
+- $\beta_0(u_i,v_i)$: the intercept, which can vary with location $(u_i,v_i)$
+- $\sum_{k=1}^p \beta_{ik}(u_i,v_i) x_{ik}$: the weighted sum of predictors $x_{ik}$,
+where each predictor has its own coefficient that may depend on $(u_i,v_i)$
+- $\epsilon_i$: the error term for observation $i$
+
+. . .
+
+*Translation:*
+
+“The outcome $y_i$ is explained by an intercept and a weighted combination of predictors,
+with coefficients that may change depending on the location $(u_i,v_i)$, plus some error.”
+
+## Translating equation 2
+
+
+```{=tex}
+\begin{align}
+\hat{\beta}(i) = [X^TW(i)X]^{-1}X^TW(i)Y
+$\hat{\beta}(i)$: the estimated coefficients at location $i$
+\end{align}
+```
+
+where:
+- $X$: the matrix of predictor variables
+- $Y$: the vector of observed outcomes
+- $W(i)$: a weight matrix that depends on location $i$
+- $X^T$: the transpose of $X$
+- $[X^TW(i)X]^{-1}$: the inverse of the weighted cross-product matrix
+
+. . .
+
+*Translation:*
+
+“The estimated coefficients $\hat{\beta}(i)$ are obtained by solving a weighted least squares problem:
+take the predictors $X$, weight them with $W(i)$, and solve for the coefficients that best fit $Y$.”
 
 # Overview 
 
@@ -488,13 +856,23 @@ We denote matrices by capital letters: $A$, $B$, ... :
 We've covered: 
 
 - Mathematical notation
-- Functions 
 - Sums and Products
+- Functions 
 - Matrices 
 - Algebraic representations 
 
 ## Key takeaways 
 
+- Can use mathematical notation to write equations in a univeral language. 
+- Linear algebra helps us to solve systems of linear equations. 
+
+. . .
+
+**If in doubt:**
+
+. . .
+
+Use the maths cheat sheet!
 
 # Practical 
 The practical will focus on understanding mathematical equations.  
